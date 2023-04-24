@@ -25,7 +25,8 @@
     "lint:fix": "yarn run rome check . --apply",
     "lint:css": "stylelint --fix \"**/*.{js,jsx,ts,tsx}\"",
     "format": "yarn run rome format .",
-    "format:fix": "yarn run rome format . --write"
+    "format:fix": "yarn run rome format . --write",
+    "build-storybook": "storybook build"
   },
   "packageManager": "yarn@3.2.4",
   "dependencies": {
