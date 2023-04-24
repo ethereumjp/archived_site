@@ -35,25 +35,25 @@ jobs:
       - name: tsc/lint/format check
         run: yarn tsc && yarn run rome ci .
 
-  chromatic-deploy:
-    runs-on: ubuntu-latest
-    needs: check
-    if: ${{ github.actor != 'renovate[bot]' }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ${{ github.workspace }}/node_modules
-            ${{ github.workspace }}/.yarn/cache
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-nodemodules
-      - name: publish chromatic
-        uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          onlyChanged: true
+  # chromatic-deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: check
+  #   if: ${{ github.actor != 'renovate[bot]' }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+  #     - uses: actions/cache@v3
+  #       with:
+  #         path: |
+  #           ${{ github.workspace }}/node_modules
+  #           ${{ github.workspace }}/.yarn/cache
+  #         key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-nodemodules
+  #     - name: publish chromatic
+  #       uses: chromaui/action@v1
+  #       with:
+  #         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+  #         onlyChanged: true
 
   build:
     runs-on: ubuntu-latest
