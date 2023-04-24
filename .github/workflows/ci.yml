@@ -14,7 +14,9 @@ jobs:
       - uses: actions/cache@v3
         id: yarn-cache
         with:
-          path: "**/node_modules"
+          path: |
+            ${{ github.workspace }}/node_modules
+            ${{ github.workspace }}/.yarn/cache
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-nodemodules
       - name: Install packages
         if: steps.yarn-cache.outputs.cache-hit != 'true'
