@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 
+// rome-ignore lint/suspicious/noShadowRestrictedNames: This is a nextjs error boundary component
 export default function Error({
   error,
   reset,
