@@ -2,9 +2,7 @@
   "linter": {
     "enabled": true,
     "ignore": [".next"],
-    "rules": {
-      "correctness": { "noShadowRestrictedNames": "warn" }
-    }
+    "rules": {}
   },
   "formatter": {
     "enabled": true,
