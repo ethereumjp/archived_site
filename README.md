@@ -1,15 +1,7 @@
-# Sho's Nextjs template
+# Ethereum Japan website
 
 ## Features
 
 - typescript
-- tailwindcss
-- Rome linter & formatter
-- vscode settings
-
-## Instantiate
-
-```zsh
-yarn install
-yarn simple-git-hooks
-```
+- styled components ([linaria](https://github.com/callstack/linaria))
+- [Rome](https://github.com/rome/tools) linter & formatter
