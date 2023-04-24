@@ -1,0 +1,21 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "build-static": {
+      "outputs": [".next/**", "!.next/cache/**", "out/**"]
+    },
+    "build-storybook": {
+      "outputs": ["storybook-static/**"]
+    },
+    "lint": {},
+    "lint:fix": {},
+    "lint:css": {},
+    "format": {},
+    "format:fix": {},
+    "test": {},
+    "tsc": {}
+  }
+}
