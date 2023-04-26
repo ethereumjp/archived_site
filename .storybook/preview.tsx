@@ -1,5 +1,5 @@
-import * as NextImage from 'next/image';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
+import * as NextImage from 'next/image';
 import React from 'react';
 
 export const parameters = {
