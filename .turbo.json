@@ -1,11 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "build": {
+    "dev": {
       "outputs": [".next/**", "!.next/cache/**"]
     },
-    "build-static": {
-      "outputs": [".next/**", "!.next/cache/**", "out/**"]
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**"]
     },
     "build-storybook": {
       "outputs": ["storybook-static/**"]
