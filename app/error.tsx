@@ -1,15 +1,14 @@
 'use client';
 
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 
-// rome-ignore lint/suspicious/noShadowRestrictedNames: This is a nextjs error boundary component
-export default function Error({
-  error,
-  reset,
-}: {
+interface ErrorProps {
   error: Error;
   reset: () => void;
-}) {
+}
+
+// rome-ignore lint/suspicious/noShadowRestrictedNames: This is a nextjs error boundary component
+const Error: FC<ErrorProps> = ({ error, reset }) => {
   useEffect(() => {
     // Log the error to an error reporting service
     console.error(error);
@@ -21,4 +20,6 @@ export default function Error({
       <button onClick={() => reset()}>Reset error boundary</button>
     </div>
   );
-}
+};
+
+export default Error;

@@ -1,4 +1,9 @@
-export default function Page() {
+import { NextPage } from 'next';
+import Link from 'next/link';
+
+import type { PageProps } from '@/types';
+
+const Page: NextPage<PageProps> = ({ params, searchParams }) => {
   return (
     <div>
       <h1 className="text-info">
@@ -13,6 +18,9 @@ export default function Page() {
       <p className=" text-violet-500">
         Typography {'<'}p{'>'}
       </p>
+      <Link href="/about">Jump</Link>
     </div>
   );
-}
+};
+
+export default Page;
