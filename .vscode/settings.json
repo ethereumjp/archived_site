@@ -14,7 +14,8 @@
     "editor.defaultFormatter": "rome.rome"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": true,
+    "source.organizeImports.rome": true
   },
   "css.validate": false,
   "less.validate": false,

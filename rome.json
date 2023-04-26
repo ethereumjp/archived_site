@@ -16,5 +16,8 @@
       "quoteProperties": "asNeeded",
       "trailingComma": "all"
     }
+  },
+  "organizeImports": {
+    "enabled": true
   }
 }
