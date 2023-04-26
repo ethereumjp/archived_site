@@ -2,7 +2,7 @@ import './style.linaria.global';
 import { Inter } from 'next/font/google';
 import { FC } from 'react';
 
-import type { ComponentProps } from '@/types';
+import type { ComponentProps } from '@/components/types';
 
 export const metadata = {
   title: {

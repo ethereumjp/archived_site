@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 
-import type { PageProps } from '@/types';
+import type { PageProps } from '@/components/types';
 
 const Page: NextPage<PageProps> = ({ params, searchParams }) => {
   return (

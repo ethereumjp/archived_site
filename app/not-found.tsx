@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { ComponentProps } from '@/types';
+import type { ComponentProps } from '@/components/types';
 
 const NotFound: FC<ComponentProps> = ({ children }) => {
   return (

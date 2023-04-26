@@ -5,8 +5,9 @@ import { FC } from 'react';
 
 import { NavMenu } from './menu';
 import ethjp_logo from '/public/logo/ej.png';
+import type { ComponentProps } from '@/components/types';
 
-const Header: FC = () => {
+const Header: FC<ComponentProps> = ({ children }) => {
   return (
     <header className="header desktop:px-8">
       {/*Logo*/}
