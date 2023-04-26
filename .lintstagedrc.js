@@ -1,12 +1,12 @@
 const path = require('path');
 
 const buildLintCommand = (filenames) =>
-  `yarn lint ${filenames
+  `yarn run rome check ${filenames
     .map((f) => path.relative(process.cwd(), f))
     .join(' ')}`;
 
 const buildFormatCommand = (filenames) =>
-  `yarn format ${filenames
+  `yarn run rome format ${filenames
     .map((f) => path.relative(process.cwd(), f))
     .join(' ')} `;
 
