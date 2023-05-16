@@ -8,5 +8,5 @@ export interface PageProps {
 }
 
 export interface ComponentProps {
-  children: ReactNode;
+  children?: ReactNode;
 }

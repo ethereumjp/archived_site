@@ -1,9 +1,17 @@
-import { Spin as Hamburger } from 'hamburger-react';
+'use client';
 
 import Link from 'next/link';
 
+import { css } from '@linaria/core';
+import { Spin as Hamburger } from 'hamburger-react';
 import { useState } from 'react';
 import type { FC } from 'react';
+
+import { menuItem } from '@/styles';
+
+const menu = css`
+  position: absolute;
+`;
 
 const Item: FC<{
   id: string;
@@ -17,16 +25,9 @@ const Item: FC<{
       href={href}
       passHref={true}
       target={newpage ? '_blank' : '_self'}
-      // className="hover:no-underline"
+      className={menuItem}
     >
-      <div
-      // className="py-2 px-3 rounded-md laptop:rounded-xl
-      //           outline outline-1 laptop:outline-0 laptop:hover:outline-1 outline-brand-yellow
-      //           font-sans font-semibold tracking-widest text-brand-white
-      //         bg-brand-onyx laptop:bg-transparent hover:bg-brand-onyx"
-      >
-        {text}
-      </div>
+      {text}
     </Link>
   );
 };
@@ -38,9 +39,10 @@ export const NavMenu: FC = () => {
     return (
       <div
         id="nav menu"
-        className={`${
-          props.open ? '' : 'hidden '
-        }absolute inset-y-16 right-4 flex flex-col items-end space-y-2 laptop:relative laptop:inset-y-0 laptop:flex-row laptop:space-y-0 laptop:space-x-6`}
+        className={menu}
+        // className={`${
+        //   props.open ? '' : 'hidden '
+        // }absolute inset-y-16 right-4 flex flex-col items-end space-y-2 laptop:relative laptop:inset-y-0 laptop:flex-row laptop:space-y-0 laptop:space-x-6`}
       >
         {/* Portal */}
         <Item id="start" href="https://app.unchain.tech/" text="Start" />

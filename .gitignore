@@ -57,3 +57,6 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# app directory (until migration)
+app

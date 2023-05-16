@@ -1,8 +1,10 @@
-import './style.linaria.global';
+import '@/style.linaria.global';
+
 import { Inter } from 'next/font/google';
 import { FC } from 'react';
 
-import type { ComponentProps } from '@/components/types';
+import Header from '@/components/organisms/header';
+import type { ComponentProps } from '@/types';
 
 export const metadata = {
   title: {
@@ -73,7 +75,11 @@ const RootLayout: FC<ComponentProps> = ({ children }) => {
   return (
     <html lang="ja" className={fontInter.className}>
       <head />
-      <body>{children}</body>
+
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 };
