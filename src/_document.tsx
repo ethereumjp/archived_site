@@ -13,12 +13,12 @@ type NoncedDocument = DocumentInitialProps & { nonce: string };
 
 const CustomDocument = (props: NoncedDocument) => {
   return (
-    <Html prefix="og: https://ogp.me/ns#" nonce={props.nonce}>
+    <Html prefix="og: https://ogp.me/ns#" lang="ja" nonce={props.nonce}>
       <Head nonce={props.nonce}>
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:url" content="ethereumjapan.org" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="UNCHAIN" />
+        <meta property="og:title" content="Ethereum Japan" />
         <meta
           property="og:image"
           content="https://ethereumjapan.org/logo.png"

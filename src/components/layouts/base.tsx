@@ -1,10 +1,9 @@
-import '@/style.linaria.global';
-
 import { Inter } from 'next/font/google';
+import Head from 'next/head';
 import { FC } from 'react';
 
 import Header from '@/components/organisms/header';
-import type { ComponentProps } from '@/types';
+import type { PageProps } from '@/types';
 
 export const metadata = {
   title: {
@@ -14,7 +13,7 @@ export const metadata = {
   description: 'Everything Ethereum in Japan',
   keywords: ['Ethereum', 'Japan', 'Blockchain'],
   category: 'technology',
-  authors: [{ name: 'sho', url: 'https://akxra.art' }],
+  authors: [{ name: 'Ethereum Japan', url: 'https://github.com/ethereumjp' }],
   formatDetection: {
     email: false,
     address: false,
@@ -71,16 +70,20 @@ const fontInter = Inter({
   display: 'swap',
 });
 
-const RootLayout: FC<ComponentProps> = ({ children }) => {
-  return (
-    <html lang="ja" className={fontInter.className}>
-      <head />
+const RootLayout: FC<PageProps> = ({ pageTitle, children }) => {
+  const siteTitle = 'Ethereum Japan';
 
-      <body>
+  return (
+    <>
+      <Head>
+        <title>{pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle}</title>
+      </Head>
+
+      <main className={fontInter.className}>
         <Header />
         {children}
-      </body>
-    </html>
+      </main>
+    </>
   );
 };
 
