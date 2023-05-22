@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
-const withLinaria = require('next-with-linaria');
 
 const nextConfig = {
+  experimental: { appDir: false },
   reactStrictMode: true,
-  experimental: { appDir: true },
+  swcMinify: true,
+  compiler: {
+    emotion: true,
+  },
 };
 
-module.exports = withLinaria(nextConfig);
+module.exports = nextConfig;
