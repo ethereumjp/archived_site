@@ -1,24 +1,38 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { css } from '@linaria/core';
 import { FC } from 'react';
+
+import { css } from '@emotion/react';
 
 import { NavMenu } from './menu';
 import ethjp_logo from '/public/logo/ej.png';
-import { header } from '@/styles';
 import type { ComponentProps } from '@/types';
 
-const logoLink = css`
-  position: relative;
+const header = css`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 50;
 `;
 
 const Header: FC<ComponentProps> = ({ children }) => {
   return (
-    <header className={header}>
+    <header css={header}>
       {/*Logo*/}
-      <Link href="/" passHref={true} className={logoLink}>
-        <Image alt="Ethereum Japan" src={ethjp_logo} sizes='100vw' />
+      <Link href='/' passHref={true}>
+        <Image
+          alt='Ethereum Japan'
+          src={ethjp_logo}
+          css={css`
+            border-radius: 50%;
+            cursor: pointer;
+            height: auto;
+            max-width: 80px;
+          `}
+        />
       </Link>
       <NavMenu />
     </header>
