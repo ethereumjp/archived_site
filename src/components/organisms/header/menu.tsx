@@ -8,63 +8,63 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Spin as Hamburger } from 'hamburger-react';
 
-import { mq } from '@/constants';
+import { mq } from '@/themes/settings/breakpoints';
 
 export const NavMenu: FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  const Bar = styled.nav`
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-    min-height: 10vh;
-    padding: 2vh 4vw;
-    position: relative;
+  const Bar = styled.nav({
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '10vh',
+    padding: '2vh 4vw',
+    position: 'relative',
 
-    ${mq.tablet} {
-      flex-direction: row;
-      visibility: visible;
-    }
-  `;
+    [mq.tablet]: {
+      flexDirection: 'row',
+      visibility: 'visible',
+    },
+  });
 
-  const MainNav = styled.ul`
-    display: ${isMenuOpen ? 'flex' : 'none'};
-    flex-direction: column;
-    list-style-type: none;
+  const MainNav = styled.ul({
+    display: isMenuOpen ? 'flex' : 'none',
+    flexDirection: 'column',
+    listStyleType: 'none',
 
-    ${mq.tablet} {
-      display: flex !important;
-      flex-direction: row;
-      justify-content: flex-end;
-    }
-  `;
+    [mq.tablet]: {
+      display: 'flex !important',
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+    },
+  });
 
-  const NavLi = styled.li`
-    margin: 14px auto;
-    text-align: end;
-  `;
+  const NavLi = styled.li({
+    margin: '14px auto',
+  });
 
-  const BurgerWrapper = styled.div`
-    ${mq.tablet} {
-      visibility: hidden;
-    }
-  `;
+  const BurgerWrapper = styled.div({
+    [mq.tablet]: {
+      visibility: 'hidden',
+    },
+  });
 
-  const menuItem = css`
-    display: flex;
-    flex-direction: column;
-    font-size: 1.2rem;
-    letter-spacing: 1.5px;
-    list-style-type: none;
+  const menuItem = css({
+    display: 'flex',
+    flexDirection: 'column',
+    fontSize: '1.2rem',
+    letterSpacing: '1.5px',
+    listStyleType: 'none',
 
-    ${mq.tablet} {
-      margin: 0 10px;
-    }
-    ${mq.laptop} {
-      font-size: 1.4rem;
-      margin: 0 20px;
-    }
-  `;
+    [mq.tablet]: {
+      margin: '0 10px',
+    },
+
+    [mq.laptop]: {
+      fontSize: '1.4rem',
+      margin: '0 20px',
+    },
+  });
 
   const Item: FC<{
     id: string;
@@ -72,14 +72,9 @@ export const NavMenu: FC = () => {
     text: string;
     newpage?: boolean;
   }> = ({ id, href, text, newpage }) => {
-    const ItemLink = styled(Link)`
-      font-weight: 500;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    `;
+    const ItemLink = styled(Link)({
+      fontWeight: 500,
+    });
     return (
       <ItemLink
         id={id}

@@ -6,33 +6,32 @@ import { css } from '@emotion/react';
 
 import { NavMenu } from './menu';
 import ethjp_logo from '/public/logo/ej.png';
+import { mq } from '@/themes/settings/breakpoints';
 import type { ComponentProps } from '@/types';
 
-const header = css`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 50;
-`;
-
 const Header: FC<ComponentProps> = ({ children }) => {
+  const headerStyle = css({
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'space-between',
+    position: 'sticky',
+    top: 0,
+    width: '100%',
+    zIndex: 50,
+  });
+
+  const logoStyle = css({
+    borderRadius: '50%',
+    cursor: 'pointer',
+    height: 'auto',
+    maxWidth: '80px',
+  });
+
   return (
-    <header css={header}>
+    <header css={headerStyle}>
       {/*Logo*/}
-      <Link href='/' passHref={true}>
-        <Image
-          alt='Ethereum Japan'
-          src={ethjp_logo}
-          css={css`
-            border-radius: 50%;
-            cursor: pointer;
-            height: auto;
-            max-width: 80px;
-          `}
-        />
+      <Link href='/' passHref={true} css={css({})}>
+        <Image alt='Ethereum Japan' src={ethjp_logo} css={logoStyle} />
       </Link>
       <NavMenu />
     </header>

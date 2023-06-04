@@ -2,7 +2,11 @@ import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { FC } from 'react';
 
+import createCache from '@emotion/cache';
+import { CacheProvider, Global, ThemeProvider, css } from '@emotion/react';
+
 import Header from '@/components/organisms/header';
+import { mq } from '@/themes/settings/breakpoints';
 import type { PageProps } from '@/types';
 
 export const metadata = {
@@ -70,20 +74,63 @@ const fontInter = Inter({
   display: 'swap',
 });
 
+const globalStyles = (
+  <Global
+    styles={css({
+      'html, body': {},
+
+      h1: {
+        [mq.desktop]: {
+          fontSize: '4.5rem',
+          lineHeight: 1.1,
+        },
+      },
+
+      h2: {
+        [mq.desktop]: {
+          fontSize: '3rem',
+          lineHeight: 1.15,
+        },
+      },
+
+      h3: {
+        [mq.desktop]: {
+          fontSize: '2.25rem',
+          lineHeight: 1.25,
+        },
+      },
+
+      p: {},
+
+      a: {
+        textDecoration: 'none',
+      },
+
+      '*': {},
+    })}
+  />
+);
+
+const styleCache = createCache({ key: 'next' });
+
 const RootLayout: FC<PageProps> = ({ pageTitle, children }) => {
   const siteTitle = 'Ethereum Japan';
 
   return (
-    <>
-      <Head>
-        <title>{pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle}</title>
-      </Head>
+    <CacheProvider value={styleCache}>
+      <ThemeProvider theme={globalStyles}>
+        {globalStyles}
 
-      <main className={fontInter.className}>
-        <Header />
-        {children}
-      </main>
-    </>
+        <Head>
+          <title>{pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle}</title>
+        </Head>
+
+        <main className={fontInter.className}>
+          <Header />
+          {children}
+        </main>
+      </ThemeProvider>
+    </CacheProvider>
   );
 };
 

@@ -1,17 +1,7 @@
-import { AppProps } from 'next/app';
-
-import createCache from '@emotion/cache';
-import { CacheProvider } from '@emotion/react';
-
-const styleCache = createCache({ key: 'next' });
+import type { AppProps } from 'next/app';
 
 const EthJpSite = ({ Component, pageProps }: AppProps) => {
-  return (
-    <CacheProvider value={styleCache}>
-      {/* {globalStyles} */}
-      <Component {...pageProps} />
-    </CacheProvider>
-  );
+  return <Component {...pageProps} />;
 };
 
 export default EthJpSite;
