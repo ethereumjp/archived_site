@@ -63,4 +63,4 @@ export const brand = {
   JordyBlue: '#88AAF1',
   BluePantone: '#1616B4',
   VodkaLightPurple: '#C9B3F5',
-};
+} as const;

@@ -8,4 +8,4 @@ export const themes = (mode: 'light' | 'dark') =>
 export const theme = {
   breakpoint: mq,
   zindex: zIndex,
-};
+} as const;
