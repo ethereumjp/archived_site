@@ -1,7 +1,7 @@
 import { LanguageToggle } from '@/components/molecules/languageToggle';
 import { NavMenu } from '@/components/molecules/navMenu';
 import { ThemeToggle } from '@/components/molecules/themeToggle';
-import { mq } from '@/constants';
+import { mq } from '@/themes/settings/breakpoints';
 
 import { css } from '@emotion/react';
 

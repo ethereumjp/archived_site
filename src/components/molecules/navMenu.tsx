@@ -1,14 +1,12 @@
 'use client';
 
-import Link from 'next/link';
-import { useState } from 'react';
-import type { FC } from 'react';
-
+import { mq } from '@/themes/settings/breakpoints';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Spin as Hamburger } from 'hamburger-react';
-
-import { mq } from '@/constants';
+import Link from 'next/link';
+import { useState } from 'react';
+import type { FC } from 'react';
 
 export const NavMenu: FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -101,7 +99,7 @@ export const NavMenu: FC = () => {
       </BurgerWrapper>
       <MainNav>
         <Item id='home' href='/' text='Home' />
-        <Item id='events' href='/events' text='Events' />
+        <Item id='events' href='/event' text='Events' />
         <Item id='about' href='/about' text='About' />
       </MainNav>
     </Bar>

@@ -1,14 +1,15 @@
+import Footer from '@/components/organisms/footer';
+import Header from '@/components/organisms/header';
+import { globalStyles } from '@/themes/global';
+// import { mq } from '@/themes/settings/breakpoints';
+// import { themeDark, themeLight } from '@/themes/settings/color';
+import type { PageProps } from '@/types';
+
+// import createCache from '@emotion/cache';
+import { CacheProvider, Global, ThemeProvider, css } from '@emotion/react';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { FC } from 'react';
-
-import createCache from '@emotion/cache';
-import { CacheProvider, Global, ThemeProvider, css } from '@emotion/react';
-
-import Footer from '@/components/organisms/footer';
-import Header from '@/components/organisms/header';
-import { mq } from '@/themes/settings/breakpoints';
-import type { PageProps } from '@/types';
 
 export const metadata = {
   title: {
@@ -75,64 +76,35 @@ const fontInter = Inter({
   display: 'swap',
 });
 
-const globalStyles = (
-  <Global
-    styles={css({
-      'html, body': {},
-
-      h1: {
-        [mq.desktop]: {
-          fontSize: '4.5rem',
-          lineHeight: 1.1,
-        },
-      },
-
-      h2: {
-        [mq.desktop]: {
-          fontSize: '3rem',
-          lineHeight: 1.15,
-        },
-      },
-
-      h3: {
-        [mq.desktop]: {
-          fontSize: '2.25rem',
-          lineHeight: 1.25,
-        },
-      },
-
-      p: {},
-
-      a: {
-        textDecoration: 'none',
-      },
-
-      '*': {},
-    })}
-  />
-);
-
-const styleCache = createCache({ key: 'next' });
+// const styleCache = createCache({ key: 'next' });
 
 const RootLayout: FC<PageProps> = ({ pageTitle, children }) => {
   const siteTitle = 'Ethereum Japan';
 
   return (
-    <CacheProvider value={styleCache}>
-      <ThemeProvider theme={globalStyles}>
-        {globalStyles}
+    <>
+      {/* <CacheProvider value={styleCache}> */}
+      {/* <ThemeProvider theme={<Global styles={globalStyles} />}> */}
+      <Global styles={globalStyles} />
 
-        <Head>
-          <title>{pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle}</title>
-        </Head>
+      <Head>
+        <title>{pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle}</title>
+      </Head>
 
-        <main className={fontInter.className}>
-          <Header />
+      <body className={fontInter.className}>
+        <Header />
+        <main
+          css={css`
+            background-color: #B8FAF6;
+          `}
+        >
           {children}
-          <Footer />
         </main>
-      </ThemeProvider>
-    </CacheProvider>
+        <Footer />
+      </body>
+      {/* </ThemeProvider> */}
+      {/* </CacheProvider> */}
+    </>
   );
 };
 
