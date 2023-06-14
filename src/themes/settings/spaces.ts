@@ -98,4 +98,4 @@ export const spacing = {
   94: '23.5rem',
   95: '23.75rem',
   96: '24rem',
-} as const;
+};
