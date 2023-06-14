@@ -5,6 +5,7 @@ import { FC } from 'react';
 import createCache from '@emotion/cache';
 import { CacheProvider, Global, ThemeProvider, css } from '@emotion/react';
 
+import Footer from '@/components/organisms/footer';
 import Header from '@/components/organisms/header';
 import { mq } from '@/themes/settings/breakpoints';
 import type { PageProps } from '@/types';
@@ -128,6 +129,7 @@ const RootLayout: FC<PageProps> = ({ pageTitle, children }) => {
         <main className={fontInter.className}>
           <Header />
           {children}
+          <Footer />
         </main>
       </ThemeProvider>
     </CacheProvider>
