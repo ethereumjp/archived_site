@@ -6605,6 +6605,7 @@ __metadata:
     postcss-styled-syntax: ^0.4.0
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-icons: ^4.9.0
     rome: ^12.0.0
     simple-git-hooks: ^2.8.0
     storybook: ^7.0.6
@@ -10450,6 +10451,15 @@ __metadata:
     react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
     react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
   checksum: c3907cc4c1d3e9ecc8ca7727058ebcba6ec89848d9e07bfd2c77ee8f28f1ad99bf55e38359dec8a1125de83d41ac09a2874f53c41415edc86ffa9840fa1b7856
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^4.9.0":
+  version: 4.9.0
+  resolution: "react-icons@npm:4.9.0"
+  peerDependencies:
+    react: "*"
+  checksum: 69d1000d02349cf4baa78a0882aff09723d348d910256ea7489dea777abf10f158b27c1b5d3b1d2ec030e21320eae0afcc13f9c9d11afb85a8809c59a23a923c
   languageName: node
   linkType: hard
 
