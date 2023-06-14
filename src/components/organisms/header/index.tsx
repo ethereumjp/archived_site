@@ -9,11 +9,12 @@ const Header: FC<ComponentProps> = ({ children }) => {
   const header = css`
     align-items: start;
     display: flex;
+    height: 5rem;
     justify-content: space-between;
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 50;
+    z-index: 50
   `;
 
   return (

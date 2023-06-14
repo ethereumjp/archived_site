@@ -1,6 +1,6 @@
 import { SearchInput } from '@/components/molecules/searchInput';
 import { ServiceMenu } from '@/components/molecules/serviceMenu';
-import { mq } from '@/constants';
+import { mq } from '@/themes/settings/breakpoints';
 
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -11,7 +11,7 @@ export const HeaderRightContainer: FC = () => {
     align-items: start;
     display: flex;
     justify-content: space-between;
-    padding: 12px;
+    padding: 16px 0;
   `;
 
   return (
