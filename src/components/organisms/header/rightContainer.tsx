@@ -16,7 +16,7 @@ export const HeaderRightContainer: FC = () => {
 
   return (
     <div css={rightContainerStyle}>
-      <SearchInput />
+      {/* <SearchInput /> */}
       <ServiceMenu />
     </div>
   );

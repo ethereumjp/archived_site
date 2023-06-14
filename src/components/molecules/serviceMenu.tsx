@@ -15,8 +15,8 @@ export const ServiceMenu = () => {
   `;
   return (
     <>
-      <ThemeToggle />
-      <LanguageToggle />
+      {/* <ThemeToggle />
+      <LanguageToggle /> */}
 
       <div css={navMenuStyle}>
         <NavMenu />

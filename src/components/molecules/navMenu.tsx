@@ -101,8 +101,8 @@ export const NavMenu: FC = () => {
       </BurgerWrapper>
       <MainNav>
         <Item id='home' href='/' text='Home' />
-        <Item id='events' href='/events' text='Events ' />
-        <Item id='about' href='/about' text='About us' />
+        <Item id='events' href='/events' text='Events' />
+        <Item id='about' href='/about' text='About' />
       </MainNav>
     </Bar>
   );
