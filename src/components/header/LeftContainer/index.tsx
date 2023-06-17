@@ -1,11 +1,11 @@
-import { Glyph } from '@/components/atoms/glyph';
-import { NavMenu } from '@/components/molecules/navMenu';
+import { NavMenu } from '../common/NavMenu';
+import { Glyph } from './Glyph';
 import { mq } from '@/themes/settings/breakpoints';
 
 import { css } from '@emotion/react';
 import { FC } from 'react';
 
-export const HeaderLeftContainer: FC = () => {
+export const LeftContainer: FC = () => {
   const leftContainerStyle = css`
     align-items: center;
     display: flex;

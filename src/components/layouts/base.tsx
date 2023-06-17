@@ -1,5 +1,5 @@
-import Footer from '@/components/organisms/footer';
-import Header from '@/components/organisms/header';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 import { globalStyles } from '@/themes/global';
 // import { mq } from '@/themes/settings/breakpoints';
 // import { themeDark, themeLight } from '@/themes/settings/color';

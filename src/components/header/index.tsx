@@ -1,5 +1,5 @@
-import { HeaderLeftContainer } from './leftContainer';
-import { HeaderRightContainer } from './rightContainer';
+import { LeftContainer } from './LeftContainer';
+import { RightContainer } from './RightContainer';
 import type { ComponentProps } from '@/types';
 
 import { css } from '@emotion/react';
@@ -19,9 +19,8 @@ const Header: FC<ComponentProps> = ({ children }) => {
 
   return (
     <header css={header}>
-      {/* Header Left */}
-      <HeaderLeftContainer />
-      <HeaderRightContainer />
+      <LeftContainer />
+      <RightContainer />
     </header>
   );
 };

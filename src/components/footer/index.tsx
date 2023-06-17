@@ -1,5 +1,5 @@
-import { BottomMenu } from './bottomMenu';
-import { Socials } from './socials';
+import { BottomMenu } from './BottomMenu';
+import { Socials } from './Socials';
 import type { ComponentProps } from '@/types';
 
 import { css } from '@emotion/react';

@@ -1,12 +1,10 @@
-import { SearchInput } from '@/components/molecules/searchInput';
-import { ServiceMenu } from '@/components/molecules/serviceMenu';
-import { mq } from '@/themes/settings/breakpoints';
+import { SearchInput } from './SearchInput';
+import { ServiceMenu } from './ServiceMenu';
 
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 import { FC } from 'react';
 
-export const HeaderRightContainer: FC = () => {
+export const RightContainer: FC = () => {
   const rightContainerStyle = css`
     align-items: start;
     display: flex;
