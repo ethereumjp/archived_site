@@ -6606,6 +6606,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-icons: ^4.9.0
+    react-social-icons: ^5.15.0
     rome: ^12.0.0
     simple-git-hooks: ^2.8.0
     storybook: ^7.0.6
@@ -10490,6 +10491,17 @@ __metadata:
   version: 0.11.0
   resolution: "react-refresh@npm:0.11.0"
   checksum: 112178a05b1e0ffeaf5d9fb4e56b4410a34a73adeb04dbf13abdc50d9ac9df2ada83e81485156cca0b3fa296aa3612751b3d6cd13be4464642a43679b819cbc7
+  languageName: node
+  linkType: hard
+
+"react-social-icons@npm:^5.15.0":
+  version: 5.15.0
+  resolution: "react-social-icons@npm:5.15.0"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: 15.x.x || 16.x.x || 17.x.x || 18.x.x
+  checksum: b93d2ca603f24825424a44a996215af261868247897bfced1ca37f8ab9dbceb14f73ed399e49b18c9f3d77faf7aad6b5f577553dc13e435d4c3bbb21bc08c278
   languageName: node
   linkType: hard
 
