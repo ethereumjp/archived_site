@@ -1,7 +1,7 @@
 {
   "linter": {
     "enabled": true,
-    "ignore": [".next"],
+    "ignore": [".next", ".storybook", ".yarn", "node_modules"],
     "rules": {}
   },
   "formatter": {
