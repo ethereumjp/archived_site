@@ -28,7 +28,9 @@ jobs:
           static_site_generator: next
       - uses: actions/cache@v3
         with:
-          path: "**/node_modules"
+          path: |
+            ${{ github.workspace }}/node_modules
+            ${{ github.workspace }}/.yarn/cache
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-nodemodules
       - name: build
         run: yarn build-static
