@@ -93,13 +93,7 @@ const RootLayout: FC<PageProps> = ({ pageTitle, children }) => {
 
       <body className={fontInter.className}>
         <Header />
-        <main
-          css={css`
-            background-color: #B8FAF6;
-          `}
-        >
-          {children}
-        </main>
+        <main css={css``}>{children}</main>
         <Footer />
       </body>
       {/* </ThemeProvider> */}

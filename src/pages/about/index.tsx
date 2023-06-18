@@ -7,7 +7,7 @@ const About: NextPage<PageProps> = ({ params, searchParams }) => {
   return (
     <RootLayout pageTitle='about'>
       <div>
-        <h1>About</h1>
+        <h1>About us</h1>
       </div>
     </RootLayout>
   );
