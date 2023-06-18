@@ -45,7 +45,7 @@ export const metadata = {
     title: 'Ethereum Japan',
     description: 'Everything Ethereum in Japan',
     siteId: '1511737631948034048',
-    creator: '@zsh0x',
+    creator: '@Ethereum_JP',
     creatorId: '1511737631948034048',
     images: ['https://ethereumjapan.org/ej.png'],
   },

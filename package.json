@@ -7,12 +7,6 @@
     "type": "git",
     "url": "git+https://github.com/ethereumjp/site.git"
   },
-  "contributors": [
-    {
-      "name": "neila",
-      "email": "40727091+neila@users.noreply.github.com"
-    }
-  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ethereumjp/site/issues"
