@@ -14,7 +14,8 @@
     "formatter": {
       "quoteStyle": "single",
       "quoteProperties": "asNeeded",
-      "trailingComma": "all"
+      "trailingComma": "all",
+      "semicolons": "always"
     }
   },
   "organizeImports": {
