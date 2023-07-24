@@ -55,6 +55,9 @@ export const NavMenu: FC = () => {
     ${mq.tablet} {
       background-color: transparent;
       border: none;
+      &:hover {
+        background-color: transparent;
+      }
     }
   `;
 

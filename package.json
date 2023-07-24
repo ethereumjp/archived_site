@@ -11,6 +11,9 @@
   "bugs": {
     "url": "https://github.com/ethereumjp/site/issues"
   },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -63,8 +66,5 @@
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "turbo": "^1.9.3",
     "typescript": "^5.0.3"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
   }
 }
