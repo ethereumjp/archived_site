@@ -91,11 +91,11 @@ const RootLayout: FC<PageProps> = ({ pageTitle, children }) => {
         <title>{pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle}</title>
       </Head>
 
-      <body className={fontInter.className}>
+      <div className={fontInter.className}>
         <Header />
         <main css={css``}>{children}</main>
         <Footer />
-      </body>
+      </div>
       {/* </ThemeProvider> */}
       {/* </CacheProvider> */}
     </>
