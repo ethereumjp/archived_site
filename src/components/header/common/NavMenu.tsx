@@ -1,6 +1,7 @@
 'use client';
 
 import { mq } from '@/themes/settings/breakpoints';
+import { themeLight } from '@/themes/settings/color';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Spin as Hamburger } from 'hamburger-react';
@@ -19,9 +20,8 @@ export const NavMenu: FC = () => {
 
   const Bar = styled.nav`
     align-items: flex-end;
-    display: ${isMenuOpen ? 'flex' : 'flex'};
+    display: flex;
     flex-direction: column;
-    position: relative;
 
     ${mq.tablet} {
       flex-direction: row;
@@ -33,18 +33,29 @@ export const NavMenu: FC = () => {
     display: ${isMenuOpen ? 'flex' : 'none'};
     flex-direction: column;
     list-style-type: none;
+    padding: 0;
 
     ${mq.tablet} {
       display: flex !important;
       flex-direction: row;
-      justify-content: flex-end;
-      text-align: end;
     }
   `;
 
   const NavLi = styled.li`
-    margin: 12px 0;
+    background-color: ${themeLight.PrimaryLowContrast};
+    border: 1px solid ${themeLight.PrimaryHighContrast};
+    border-radius: 4px;
+    padding: 12px 20px;
     text-align: end;
+
+    &:hover {
+      background-color: ${themeLight.PrimaryHover};
+    }
+
+    ${mq.tablet} {
+      background-color: transparent;
+      border: none;
+    }
   `;
 
   const menuItem = css`
@@ -54,12 +65,8 @@ export const NavMenu: FC = () => {
     letter-spacing: 1.5px;
     list-style-type: none;
 
-    ${mq.tablet} {
-      margin: 0 10px;
-    }
     ${mq.laptop} {
       font-size: 1.4rem;
-      margin: 0 20px;
     }
   `;
 

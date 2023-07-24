@@ -14,7 +14,7 @@ const Header: FC<ComponentProps> = ({ children }) => {
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 50
+    z-index: 50;
   `;
 
   return (

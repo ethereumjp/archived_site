@@ -10,7 +10,7 @@ export const Glyph: FC = () => {
     border-radius: 50%;
     cursor: pointer;
     height: auto;
-    max-width: 80px;
+    max-width: 76px;
   `;
 
   return (

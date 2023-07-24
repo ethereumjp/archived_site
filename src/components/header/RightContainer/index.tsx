@@ -6,9 +6,7 @@ import { FC } from 'react';
 
 export const RightContainer: FC = () => {
   const rightContainerStyle = css`
-    align-items: start;
     display: flex;
-    justify-content: space-between;
     padding: 16px 0;
   `;
 
