@@ -1,1 +1,8 @@
-export const en = { LOCALESWITCH: 'ja', MENU: { LANGUAGE: '日本語' } };
+export const en = {
+  LOCALESWITCH: 'ja',
+  MENU: {
+    ABOUT: 'About',
+    EVENTS: 'Events',
+    LANGUAGE: '日本語',
+  },
+};
