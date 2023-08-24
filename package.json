@@ -30,12 +30,16 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "airtable": "^0.12.2",
+    "lru-cache": "^10.0.1",
     "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.5",
     "@storybook/addon-actions": "^7.0.6",
     "@storybook/addon-essentials": "^7.0.6",
     "@storybook/addon-interactions": "^7.0.6",
@@ -49,6 +53,7 @@
     "hamburger-react": "^2.5.0",
     "lint-staged": "^13.0.3",
     "postcss-styled-syntax": "^0.4.0",
+    "react-hook-form": "^7.45.4",
     "react-icons": "^4.9.0",
     "react-social-icons": "^5.15.0",
     "rome": "^12.1.3",
