@@ -3,6 +3,13 @@ export const en = {
   MENU: {
     ABOUT: 'About',
     EVENTS: 'Events',
-    LANGUAGE: '日本語',
+    LANGUAGE: '🇯🇵',
+  },
+  FORM: {
+    NAME: 'Your name*',
+    ORGANIZATION: 'Organization*',
+    WALLET: 'ETH address*',
+    EMAIL: 'Email*',
+    INQUIRY: 'Inquiry*',
   },
 };
