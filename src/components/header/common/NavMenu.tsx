@@ -111,6 +111,7 @@ export const NavMenu: FC = () => {
         <Item id='home' href='/' text='Home' />
         <Item id='events' href='/event' text='Events' />
         <Item id='about' href='/about' text='About' />
+        <Item id='contact' href='/contact' text='Contact' />
       </MainNav>
     </Bar>
   );
