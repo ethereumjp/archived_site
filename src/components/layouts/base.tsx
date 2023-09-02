@@ -1,6 +1,7 @@
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { globalStyles } from '@/themes/global';
+import { mq } from '@/themes/settings/breakpoints';
 // import { mq } from '@/themes/settings/breakpoints';
 // import { themeDark, themeLight } from '@/themes/settings/color';
 import type { PageProps } from '@/types';
@@ -78,8 +79,23 @@ const fontInter = Inter({
 
 // const styleCache = createCache({ key: 'next' });
 
-const RootLayout: FC<PageProps> = ({ pageTitle, children }) => {
+const Layout: FC<PageProps> = ({ pageTitle, children }) => {
   const siteTitle = 'Ethereum Japan';
+
+  const baseLayoutStyle = css`
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    ${mq.tablet}{
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    ${mq.laptop}{
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  `;
 
   return (
     <>
@@ -91,7 +107,7 @@ const RootLayout: FC<PageProps> = ({ pageTitle, children }) => {
         <title>{pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle}</title>
       </Head>
 
-      <div className={fontInter.className}>
+      <div className={fontInter.className} css={baseLayoutStyle}>
         <Header />
         <main css={css``}>{children}</main>
         <Footer />
@@ -102,4 +118,4 @@ const RootLayout: FC<PageProps> = ({ pageTitle, children }) => {
   );
 };
 
-export default RootLayout;
+export default Layout;
