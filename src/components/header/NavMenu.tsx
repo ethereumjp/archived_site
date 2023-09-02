@@ -2,10 +2,10 @@
 
 import { mq } from '@/themes/settings/breakpoints';
 import { themeLight } from '@/themes/settings/color';
-import { css, keyframes } from '@emotion/react';
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+
 import { Spin as Hamburger } from 'hamburger-react';
-import { wrap } from 'module';
+
 import Link from 'next/link';
 import { useState } from 'react';
 import type { FC } from 'react';
@@ -33,7 +33,11 @@ export const NavMenu: FC = () => {
   `;
 
   const mobileMenuStyle = css`
-    display: block;
+    display: flex;
+    transform: ${isMenuOpen ? 'translateX(-10rem)' : 'translateX(0%)'};
+    transition-duration: 150ms;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 
     ${mq.laptop} {
       display: none;
@@ -41,25 +45,22 @@ export const NavMenu: FC = () => {
   `;
 
   const wrapperStyle = css`
-    background-color: ${isMenuOpen ? 'blue' : 'inherit'};
+    background-color: rgb(224 231 255);
+    border-color: rgb(171 171 254);
+    border-radius: 0.25rem;
+    border-width: 4px;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    position: absolute;
+    right: -10rem;
     text-align: end;
 
     ${mq.laptop} {
+      background-color: inherit;
       flex-direction: row;
+      position: relative;
+      right: 0;
     }
-  `;
-
-  const movingContainer = css`
-    display: flex;
-    position: absolute;
-    top: 1rem;
-    transform: ${isMenuOpen ? 'translateX(-9rem)' : 'translateX(-2rem)'};
-    transition-duration: 150ms;
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   `;
 
   const MenuItem: FC<{
@@ -75,16 +76,21 @@ export const NavMenu: FC = () => {
         passHref={true}
         target={newpage ? '_blank' : '_self'}
         css={css`
+          border-color: rgb(171 171 254);
+          border-style: solid;
+          border-width: 1px;
           font-size: 1.125rem;
           font-weight: 400;
           letter-spacing: 0.05em;
           line-height: 1.75rem;
+          padding: 0.5rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
 
-          ${mq.desktop}{
+          ${mq.laptop}{
+            border-width: 0;
             font-size: 1.5rem;
             line-height: 2rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
 
             &:hover {
               opacity: 0.6;
@@ -109,16 +115,13 @@ export const NavMenu: FC = () => {
       </div>
 
       <div css={mobileMenuStyle}>
-        <div css={movingContainer}>
-          <Hamburger rounded={true} toggled={isMenuOpen} toggle={setMenuOpen} />
-          <div css={css`position: relative`}>
-            <div css={wrapperStyle}>
-              <MenuItem id='home' href='/' text='Home' />
-              <MenuItem id='events' href='/event' text='Events' />
-              <MenuItem id='about' href='/about' text='About' />
-              <MenuItem id='contact' href='/contact' text='Contact' />
-            </div>
-          </div>
+        <Hamburger rounded={true} toggled={isMenuOpen} toggle={setMenuOpen} />
+
+        <div css={wrapperStyle}>
+          <MenuItem id='home' href='/' text='Home' />
+          <MenuItem id='events' href='/event' text='Events' />
+          <MenuItem id='about' href='/about' text='About' />
+          <MenuItem id='contact' href='/contact' text='Contact' />
         </div>
       </div>
     </div>
