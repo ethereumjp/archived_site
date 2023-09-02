@@ -1,4 +1,5 @@
-import ContactForm from '@/components/forms/ContactForm';
+// import ContactForm from '@/components/forms/ContactForm';
+import ContactFormDangerous from '@/components/forms/ContactForm_dangerous';
 import Layout from '@/components/layouts/base';
 import { mq } from '@/themes/settings/breakpoints';
 import { css } from '@emotion/react';
@@ -32,7 +33,7 @@ const Contact: NextPage = () => {
     <Layout pageTitle='Contact'>
       <h1 css={titleStyle}>CONTACT US</h1>
       <div css={formWrapperStyle}>
-        <ContactForm />
+        <ContactFormDangerous />
       </div>
     </Layout>
   );
