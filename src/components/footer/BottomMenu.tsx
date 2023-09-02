@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import Link from 'next/link';
 import { FC } from 'react';
 
 export const BottomMenu = () => {
@@ -26,9 +27,9 @@ export const BottomMenu = () => {
 
     return (
       <li css={listStyle}>
-        <a id={id} href={href} css={linkStyle}>
+        <Link id={id} href={href} css={linkStyle}>
           {text}
-        </a>
+        </Link>
       </li>
     );
   };
