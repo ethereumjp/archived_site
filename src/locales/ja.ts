@@ -6,10 +6,10 @@ export const ja = {
     LANGUAGE: 'English',
   },
   FORM: {
-    NAME: 'お名前*',
+    NAME: '名前*',
     ORGANIZATION: '企業・団体*',
-    WALLET: 'Ethereum アドレス*',
+    WALLET: 'Ethereumアドレス*',
     EMAIL: 'Eメールアドレス*',
-    INQUIRY: 'ご相談内容*',
+    INQUIRY: '問い合わせ*',
   },
 };

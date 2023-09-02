@@ -6,7 +6,7 @@ export const en = {
     LANGUAGE: '🇯🇵',
   },
   FORM: {
-    NAME: 'Your name*',
+    NAME: 'Name*',
     ORGANIZATION: 'Organization*',
     WALLET: 'ETH address*',
     EMAIL: 'Email*',
