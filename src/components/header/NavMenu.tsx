@@ -34,7 +34,7 @@ export const NavMenu: FC = () => {
 
   const mobileMenuStyle = css`
     display: flex;
-    transform: ${isMenuOpen ? 'translateX(-12.5rem)' : 'translateX(0%)'};
+    transform: ${isMenuOpen ? 'translateX(-1.5rem)' : 'translateX(0%)'};
     transition-duration: 150ms;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -45,15 +45,15 @@ export const NavMenu: FC = () => {
   `;
 
   const wrapperStyle = css`
-    background-color: rgb(224 231 255);
+    background-color: rgba(224, 231, 255, 0.8);
     border-color: rgb(171 171 254);
     border-radius: 0.25rem;
     border-style: solid;
     border-width: 1px;
-    display: flex;
+    display: ${isMenuOpen ? 'flex' : 'none'};
     flex-direction: column;
     position: absolute;
-    right: -13rem;
+    right: -1.5rem;
     text-align: end;
 
     ${mq.laptop} {
@@ -126,7 +126,7 @@ export const NavMenu: FC = () => {
       <div css={mobileMenuStyle}>
         <div
           css={css`
-            transform: ${isMenuOpen ? 'translateX(5rem)' : 'translateX(0%)'};
+            transform: ${isMenuOpen ? 'translateX(-6rem)' : 'translateX(0%)'};
             transition-duration: 150ms;
             transition-property: transform;
             transition-timing-function: cubic-bezier(0, 0, 0.2, 1);

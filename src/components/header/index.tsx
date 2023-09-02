@@ -9,12 +9,11 @@ import { FC } from 'react';
 const Header: FC<ComponentProps> = ({ children }) => {
   const header = css`
     align-items: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
     border-bottom: 1px solid rgb(212 212 212);
     display: flex;
     height: 4rem;
     justify-content: space-between;
-    opacity: 0.6;
     position: sticky;
     top: 0px;
     z-index: 50;
