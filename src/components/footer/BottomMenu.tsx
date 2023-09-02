@@ -1,9 +1,8 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 import { FC } from 'react';
 
 export const BottomMenu = () => {
-  const MenuWrapper = styled.div`
+  const wrapperStyle = css`
     display: grid;
     gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -18,7 +17,6 @@ export const BottomMenu = () => {
       list-style-type: none;
       margin: 12px 0;
     `;
-
     const linkStyle = css`
       color: #646464;
       &:hover {
@@ -36,7 +34,7 @@ export const BottomMenu = () => {
   };
 
   return (
-    <MenuWrapper>
+    <div css={wrapperStyle}>
       <section id='use_ethereum'>
         <h4>触ってみる</h4>
         <NavLink id='a' href='#' text='リンク' />
@@ -70,6 +68,6 @@ export const BottomMenu = () => {
         <h4>Ethereum JPについて</h4>
         <NavLink id='about' href='/about' text='Ethereum JPとは' />
       </section>
-    </MenuWrapper>
+    </div>
   );
 };

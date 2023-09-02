@@ -9,7 +9,7 @@ import { FC } from 'react';
 const Header: FC<ComponentProps> = ({ children }) => {
   const header = css`
     align-items: center;
-    border-bottom: 2px black;
+    border-bottom: 1px solid rgb(212 212 212);
     display: flex;
     height: 4rem;
     justify-content: space-between;
@@ -21,7 +21,6 @@ const Header: FC<ComponentProps> = ({ children }) => {
   return (
     <header css={header}>
       <Glyph />
-
       <NavMenu />
     </header>
   );
