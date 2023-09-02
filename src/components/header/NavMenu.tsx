@@ -19,8 +19,8 @@ export const NavMenu: FC = () => {
     padding-right: 0.5rem;
 
     ${mq.desktop} {
-      padding-left: 3rem;
-      padding-right: 3rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   `;
 
@@ -34,7 +34,7 @@ export const NavMenu: FC = () => {
 
   const mobileMenuStyle = css`
     display: flex;
-    transform: ${isMenuOpen ? 'translateX(-10rem)' : 'translateX(0%)'};
+    transform: ${isMenuOpen ? 'translateX(-12.5rem)' : 'translateX(0%)'};
     transition-duration: 150ms;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -48,15 +48,17 @@ export const NavMenu: FC = () => {
     background-color: rgb(224 231 255);
     border-color: rgb(171 171 254);
     border-radius: 0.25rem;
-    border-width: 4px;
+    border-style: solid;
+    border-width: 1px;
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: -10rem;
+    right: -13rem;
     text-align: end;
 
     ${mq.laptop} {
       background-color: inherit;
+      border-style: none;
       flex-direction: row;
       position: relative;
       right: 0;
@@ -79,20 +81,27 @@ export const NavMenu: FC = () => {
           border-color: rgb(171 171 254);
           border-style: solid;
           border-width: 1px;
+          color: black;
           font-size: 1.125rem;
-          font-weight: 400;
+          font-weight: 300;
           letter-spacing: 0.05em;
           line-height: 1.75rem;
           padding: 0.5rem;
           padding-left: 1rem;
           padding-right: 1rem;
 
+          ${mq.tablet} {
+            font-size: 1.25rem;
+            line-height: 2rem;
+          }
+
           ${mq.laptop}{
             border-width: 0;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             line-height: 2rem;
 
             &:hover {
+              color: rgb(28 28 255);
               opacity: 0.6;
             }
           }
@@ -108,18 +117,27 @@ export const NavMenu: FC = () => {
       <div css={laptopMenuStyle}>
         <div css={wrapperStyle}>
           <MenuItem id='home' href='/' text='Home' />
-          <MenuItem id='events' href='/event' text='Events' />
+          {/* <MenuItem id='events' href='/event' text='Events' /> */}
           <MenuItem id='about' href='/about' text='About' />
           <MenuItem id='contact' href='/contact' text='Contact' />
         </div>
       </div>
 
       <div css={mobileMenuStyle}>
-        <Hamburger rounded={true} toggled={isMenuOpen} toggle={setMenuOpen} />
+        <div
+          css={css`
+            transform: ${isMenuOpen ? 'translateX(5rem)' : 'translateX(0%)'};
+            transition-duration: 150ms;
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          `}
+        >
+          <Hamburger rounded={true} toggled={isMenuOpen} toggle={setMenuOpen} />
+        </div>
 
         <div css={wrapperStyle}>
           <MenuItem id='home' href='/' text='Home' />
-          <MenuItem id='events' href='/event' text='Events' />
+          {/* <MenuItem id='events' href='/event' text='Events' /> */}
           <MenuItem id='about' href='/about' text='About' />
           <MenuItem id='contact' href='/contact' text='Contact' />
         </div>
