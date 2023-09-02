@@ -8,8 +8,9 @@ import { FC } from 'react';
 const Header: FC<ComponentProps> = ({ children }) => {
   const header = css`
     align-items: start;
+    border-bottom: 2px black;
     display: flex;
-    height: 5rem;
+    height: 4rem;
     justify-content: space-between;
     position: sticky;
     top: 0;
