@@ -35,12 +35,6 @@
       "matchPackagePatterns": ["^@storybook/", "^storybook-"],
       "automerge": true,
       "major": { "automerge": false }
-    },
-    {
-      "groupName": "chromatic",
-      "matchPackageNames": ["chromatic"],
-      "automerge": true,
-      "major": { "automerge": false }
     }
   ]
 }

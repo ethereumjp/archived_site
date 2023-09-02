@@ -1,26 +1,27 @@
-import { LeftContainer } from './LeftContainer';
-import { RightContainer } from './RightContainer';
 import type { ComponentProps } from '@/types';
+
+import { Glyph } from './Glyph';
+import { NavMenu } from './NavMenu';
 
 import { css } from '@emotion/react';
 import { FC } from 'react';
 
 const Header: FC<ComponentProps> = ({ children }) => {
   const header = css`
-    align-items: start;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid rgb(212 212 212);
     display: flex;
-    height: 5rem;
+    height: 4rem;
     justify-content: space-between;
     position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 50
+    z-index: 50;
   `;
 
   return (
     <header css={header}>
-      <LeftContainer />
-      <RightContainer />
+      <Glyph />
+      <NavMenu />
     </header>
   );
 };

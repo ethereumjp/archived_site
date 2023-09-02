@@ -1,9 +1,8 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 import { FC } from 'react';
 
 export const BottomMenu = () => {
-  const MenuWrapper = styled.div`
+  const wrapperStyle = css`
     display: grid;
     gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -18,7 +17,6 @@ export const BottomMenu = () => {
       list-style-type: none;
       margin: 12px 0;
     `;
-
     const linkStyle = css`
       color: #646464;
       &:hover {
@@ -36,10 +34,19 @@ export const BottomMenu = () => {
   };
 
   return (
-    <MenuWrapper>
+    <div css={wrapperStyle}>
       <section id='use_ethereum'>
         <h4>触ってみる</h4>
-        <NavLink id='a' href='#' text='リンク' />
+        <NavLink
+          id='wallet'
+          href='https://ethereum.org/ja/wallets/find-wallet/'
+          text='ウォレットを用意'
+        />
+        <NavLink
+          id='exchange'
+          href='https://ethereum.org/ja/get-eth/'
+          text='ETHを入手'
+        />
       </section>
 
       <section id='learn_ethereum'>
@@ -53,23 +60,41 @@ export const BottomMenu = () => {
 
       <section id='develop_on_ethereum'>
         <h4>開発する</h4>
-        <NavLink id='c' href='#' text='リンク' />
+        <NavLink
+          id='documentation'
+          href='https://ethereum.org/ja/developers/docs/'
+          text='開発ドキュメント'
+        />
       </section>
 
       <section id='ethereum_ecosystem'>
         <h4>参加する</h4>
-        <NavLink id='d' href='#' text='リンク' />
+        <NavLink
+          id='participate'
+          href='https://ethereum.org/ja/community/get-involved/'
+          text='いろんな関わり方'
+        />
+        <NavLink
+          id='online'
+          href='https://ethereum.org/ja/community/online/'
+          text='オンラインコミュニティ'
+        />
       </section>
 
       <section id='for_enterprise'>
         <h4>事業者の皆さん</h4>
-        <NavLink id='e' href='#' text='リンク' />
+        <NavLink id='contact' href='/contact' text='お問い合わせ' />
       </section>
 
       <section id='about_ethereum_jp'>
         <h4>Ethereum JPについて</h4>
         <NavLink id='about' href='/about' text='Ethereum JPとは' />
+        <NavLink
+          id='discord'
+          href='https://discord.gg/Tm5jU3DSCE'
+          text='Ethereum JP Discord'
+        />
       </section>
-    </MenuWrapper>
+    </div>
   );
 };

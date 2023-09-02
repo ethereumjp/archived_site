@@ -1,30 +1,44 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
+import pandaHero from 'public/images/hero-panda.png';
 
-import RootLayout from '@/components/layouts/base';
+import Layout from '@/components/layouts/base';
 import type { PageProps } from '@/types';
+import { css } from '@emotion/react';
 
 const Page: NextPage<PageProps> = ({ params, searchParams }) => {
+  const introStyle = css`
+    text-align: center;
+
+
+  `;
   return (
-    <RootLayout pageTitle='landing'>
+    <Layout pageTitle='landing'>
+      <Image
+        src={pandaHero}
+        alt='image of Ethereum'
+        style={{
+          width: '100%',
+          height: 'auto',
+        }}
+        priority
+      />
+
       <div>
-        <h1 className=''>
-          Typography {'<'}h1{'>'}
-        </h1>
-        <h2 className=''>
-          Typography {'<'}h2{'>'}
-        </h2>
-        <h3 className=''>
-          Typography {'<'}h3{'>'}
-        </h3>
-        <h4 className=''>
-          Typography {'<'}h4{'>'}
-        </h4>
-        <p className=''>
-          Typography {'<'}p{'>'}
-        </p>
+        <section css={introStyle}>
+          <h1 className=''>イーサリアム・ジャパンへようこそ</h1>
+          <p
+            css={css`
+              font-size: 1.3rem;
+            `}
+          >
+            イーサリアムは、暗号通貨Ether
+            (ETH)、何千もの分散型アプリを可能にするコミュニティにより運用されているテクノロジーです。
+          </p>
+        </section>
       </div>
-    </RootLayout>
+    </Layout>
   );
 };
 

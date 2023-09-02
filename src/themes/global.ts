@@ -1,37 +1,33 @@
 import { mq } from './settings/breakpoints';
-import {} from './settings/color';
+import { neutral } from './settings/color';
 import {} from './settings/spaces';
 
 import { css } from '@emotion/react';
 
 export const globalStyles = css({
-  'html, body': {},
+  'html, body': {
+    color: neutral.Grey4,
+  },
 
   h1: {
     [mq.desktop]: {
-      fontSize: '4.5rem',
+      fontSize: '2.25rem',
       lineHeight: 1.1,
+      color: neutral.Grey6,
     },
   },
 
   h2: {
     [mq.desktop]: {
-      fontSize: '3rem',
-      lineHeight: 1.15,
+      fontSize: '1.5rem',
+      lineHeight: 1.05,
     },
   },
 
   h3: {
     [mq.desktop]: {
-      fontSize: '2.25rem',
-      lineHeight: 1.25,
-    },
-  },
-
-  h4: {
-    [mq.desktop]: {
       fontSize: '1.1rem',
-      lineHeight: 1.1,
+      lineHeight: 1.05,
     },
   },
 

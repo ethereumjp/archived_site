@@ -8,9 +8,8 @@ import { FC } from 'react';
 export const Glyph: FC = () => {
   const glyphStyle = css`
     border-radius: 50%;
-    cursor: pointer;
-    height: auto;
-    max-width: 80px;
+    max-height: 4rem;
+    width: auto;
   `;
 
   return (
