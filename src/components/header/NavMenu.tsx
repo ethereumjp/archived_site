@@ -59,6 +59,7 @@ export const NavMenu: FC = () => {
     ${mq.laptop} {
       background-color: inherit;
       border-style: none;
+      display: block;
       flex-direction: row;
       position: relative;
       right: 0;
