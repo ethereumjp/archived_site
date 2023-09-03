@@ -14,24 +14,24 @@ export const Socials = () => {
     <div css={container}>
       <SocialIcon
         url='https://github.com/ethereumjp'
-        bgColor='transparent'
-        fgColor='#000000'
+        bgColor='#000000'
+        fgColor='transparent'
         label='Github'
         target='_blank'
         rel='noreferrer'
       />
       <SocialIcon
         url='https://twitter.com/Ethereum_JP'
-        bgColor='transparent'
-        fgColor='#1DA1F2'
+        bgColor='#1DA1F2'
+        fgColor='transparent'
         label='Twitter'
         target='_blank'
         rel='noreferrer'
       />
       <SocialIcon
         url='https://discord.gg/Tm5jU3DSCE'
-        bgColor='white'
-        fgColor='#7289DA'
+        bgColor='#7289DA'
+        fgColor='white'
         label='Discord'
         target='_blank'
         rel='noreferrer'
