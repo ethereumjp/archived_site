@@ -83,7 +83,7 @@ export const BottomMenu = () => {
       </section>
 
       <section id='for_enterprise'>
-        <h4>事業者の皆さん</h4>
+        <h4>事業者の方</h4>
         <NavLink id='contact' href='/contact' text='お問い合わせ' />
       </section>
 
