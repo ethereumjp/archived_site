@@ -12,7 +12,7 @@ const Page: NextPage<PageProps> = ({ params, searchParams }) => {
     text-align: center;
   `;
   return (
-    <Layout pageTitle="landing">
+    <Layout pageTitle='landing'>
       <div
         css={css`
           overflow-x: hidden;
@@ -22,7 +22,7 @@ const Page: NextPage<PageProps> = ({ params, searchParams }) => {
       >
         <Image
           src={pandaHero}
-          alt="image of Ethereum"
+          alt='image of Ethereum'
           priority
           style={{
             marginLeft: 'auto',
@@ -34,7 +34,7 @@ const Page: NextPage<PageProps> = ({ params, searchParams }) => {
       </div>
       <div>
         <section css={introStyle}>
-          <h1 className="">イーサリアム・ジャパンへようこそ</h1>
+          <h1 className=''>イーサリアム・ジャパンへようこそ</h1>
           <p
             css={css`
               font-size: 1.3rem;
