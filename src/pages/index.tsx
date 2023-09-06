@@ -10,24 +10,31 @@ import { css } from '@emotion/react';
 const Page: NextPage<PageProps> = ({ params, searchParams }) => {
   const introStyle = css`
     text-align: center;
-
-
   `;
   return (
-    <Layout pageTitle='landing'>
-      <Image
-        src={pandaHero}
-        alt='image of Ethereum'
-        style={{
-          width: '100%',
-          height: 'auto',
-        }}
-        priority
-      />
-
+    <Layout pageTitle="landing">
+      <div
+        css={css`
+          overflow-x: hidden;
+          display: flex;
+          justify-content: center;
+        `}
+      >
+        <Image
+          src={pandaHero}
+          alt="image of Ethereum"
+          priority
+          style={{
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            width: 800,
+            height: 337,
+          }}
+        />
+      </div>
       <div>
         <section css={introStyle}>
-          <h1 className=''>イーサリアム・ジャパンへようこそ</h1>
+          <h1 className="">イーサリアム・ジャパンへようこそ</h1>
           <p
             css={css`
               font-size: 1.3rem;

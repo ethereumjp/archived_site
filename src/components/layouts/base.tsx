@@ -109,7 +109,7 @@ const Layout: FC<PageProps> = ({ pageTitle, children }) => {
 
       <div className={fontInter.className} css={baseLayoutStyle}>
         <Header />
-        <main css={css``}>{children}</main>
+        <main>{children}</main>
         <Footer />
       </div>
       {/* </ThemeProvider> */}
