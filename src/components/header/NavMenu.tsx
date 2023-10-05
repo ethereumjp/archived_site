@@ -44,7 +44,7 @@ export const NavMenu: FC = () => {
   `;
 
   const wrapperStyle = css`
-    background-color: rgba(224, 231, 255, 0.8);
+    background-color: rgb(224 231 255 / 80%);
     border-color: rgb(171 171 254);
     border-radius: 0.25rem;
     border-style: solid;
@@ -116,10 +116,10 @@ export const NavMenu: FC = () => {
     <div css={navMenuStyle}>
       <div css={laptopMenuStyle}>
         <div css={wrapperStyle}>
-          <MenuItem id="home" href="/" text="Home" />
-          <MenuItem id="events" href="/event" text="Events" />
-          <MenuItem id="about" href="/about" text="About" />
-          <MenuItem id="contact" href="/contact" text="Contact" />
+          <MenuItem id='home' href='/' text='Home' />
+          <MenuItem id='events' href='/event' text='Events' />
+          <MenuItem id='about' href='/about' text='About' />
+          <MenuItem id='contact' href='/contact' text='Contact' />
         </div>
       </div>
 
@@ -136,10 +136,10 @@ export const NavMenu: FC = () => {
         </div>
 
         <div css={wrapperStyle}>
-          <MenuItem id="home" href="/" text="Home" />
-          <MenuItem id="events" href="/event" text="Events" />
-          <MenuItem id="about" href="/about" text="About" />
-          <MenuItem id="contact" href="/contact" text="Contact" />
+          <MenuItem id='home' href='/' text='Home' />
+          <MenuItem id='events' href='/event' text='Events' />
+          <MenuItem id='about' href='/about' text='About' />
+          <MenuItem id='contact' href='/contact' text='Contact' />
         </div>
       </div>
     </div>
