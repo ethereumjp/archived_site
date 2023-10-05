@@ -1,7 +1,6 @@
 'use client';
 
 import { mq } from '@/themes/settings/breakpoints';
-import { themeLight } from '@/themes/settings/color';
 import { css } from '@emotion/react';
 
 import { Spin as Hamburger } from 'hamburger-react';
@@ -117,10 +116,10 @@ export const NavMenu: FC = () => {
     <div css={navMenuStyle}>
       <div css={laptopMenuStyle}>
         <div css={wrapperStyle}>
-          <MenuItem id='home' href='/' text='Home' />
-          {/* <MenuItem id='events' href='/event' text='Events' /> */}
-          <MenuItem id='about' href='/about' text='About' />
-          <MenuItem id='contact' href='/contact' text='Contact' />
+          <MenuItem id="home" href="/" text="Home" />
+          <MenuItem id="events" href="/event" text="Events" />
+          <MenuItem id="about" href="/about" text="About" />
+          <MenuItem id="contact" href="/contact" text="Contact" />
         </div>
       </div>
 
@@ -137,10 +136,10 @@ export const NavMenu: FC = () => {
         </div>
 
         <div css={wrapperStyle}>
-          <MenuItem id='home' href='/' text='Home' />
-          {/* <MenuItem id='events' href='/event' text='Events' /> */}
-          <MenuItem id='about' href='/about' text='About' />
-          <MenuItem id='contact' href='/contact' text='Contact' />
+          <MenuItem id="home" href="/" text="Home" />
+          <MenuItem id="events" href="/event" text="Events" />
+          <MenuItem id="about" href="/about" text="About" />
+          <MenuItem id="contact" href="/contact" text="Contact" />
         </div>
       </div>
     </div>
