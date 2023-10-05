@@ -15,9 +15,9 @@ const Page: NextPage<PageProps> = ({ params, searchParams }) => {
     <Layout pageTitle='landing'>
       <div
         css={css`
-          overflow-x: hidden;
           display: flex;
           justify-content: center;
+          overflow-x: hidden;
         `}
       >
         <Image
