@@ -33,9 +33,7 @@ export const globalStyles = css({
 
   p: {},
 
-  a: {
-    textDecoration: 'none',
-  },
+  a: { color: '#88AAF1' },
 
   '*': {},
 });

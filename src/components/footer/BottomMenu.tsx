@@ -20,8 +20,8 @@ export const BottomMenu = () => {
         margin: 12px 0;
       `;
     const linkStyle = css`
-        color: ${_new ? '#1C1CFF' : '#646464'};
-        font-weight: ${_new ? 'bold' : ''};
+        color: #646464;
+        text-decoration: none;
         &:hover {
           opacity: 0.6;
         }
@@ -30,8 +30,7 @@ export const BottomMenu = () => {
     return (
       <li css={listStyle}>
         <Link id={id} href={href} css={linkStyle}>
-          {text}{' '}
-          <span css={css`font-weight: normal;`}>{_new ? '[NEW!]' : ''}</span>
+          {text} {_new ? <span css={css` color: #1C1CFF;`}>[NEW!]</span> : ''}
         </Link>
       </li>
     );
@@ -75,7 +74,7 @@ export const BottomMenu = () => {
         <h4>参加する</h4>
         <NavLink
           id='participate'
-          href='https://ethereum.org/ja/community/get-involved/'
+          href='/about/joinus/'
           text='メンバー募集'
           _new
         />

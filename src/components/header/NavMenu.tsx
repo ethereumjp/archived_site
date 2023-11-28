@@ -89,6 +89,7 @@ export const NavMenu: FC = () => {
           padding: 0.5rem;
           padding-left: 1rem;
           padding-right: 1rem;
+          text-decoration: none;
 
           ${mq.tablet} {
             font-size: 1.25rem;
@@ -101,8 +102,7 @@ export const NavMenu: FC = () => {
             line-height: 2rem;
 
             &:hover {
-              color: rgb(28 28 255);
-              opacity: 0.6;
+              color: #88AAF1;
             }
           }
         `}
