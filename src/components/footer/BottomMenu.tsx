@@ -9,26 +9,29 @@ export const BottomMenu = () => {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   `;
 
-  const NavLink: FC<{ id: string; href: string; text: string }> = ({
-    id,
-    href,
-    text,
-  }) => {
+  const NavLink: FC<{
+    id: string;
+    href: string;
+    text: string;
+    _new?: boolean;
+  }> = ({ id, href, text, _new }) => {
     const listStyle = css`
-      list-style-type: none;
-      margin: 12px 0;
-    `;
+        list-style-type: none;
+        margin: 12px 0;
+      `;
     const linkStyle = css`
-      color: #646464;
-      &:hover {
-        opacity: 0.6;
-      }
-    `;
+        color: ${_new ? '#1C1CFF' : '#646464'};
+        font-weight: ${_new ? 'bold' : ''};
+        &:hover {
+          opacity: 0.6;
+        }
+      `;
 
     return (
       <li css={listStyle}>
         <Link id={id} href={href} css={linkStyle}>
-          {text}
+          {text}{' '}
+          <span css={css`font-weight: normal;`}>{_new ? '[NEW!]' : ''}</span>
         </Link>
       </li>
     );
@@ -70,6 +73,13 @@ export const BottomMenu = () => {
 
       <section id='ethereum_ecosystem'>
         <h4>参加する</h4>
+        <NavLink
+          id='participate'
+          href='https://ethereum.org/ja/community/get-involved/'
+          text='メンバー募集'
+          _new
+        />
+
         <NavLink
           id='participate'
           href='https://ethereum.org/ja/community/get-involved/'
