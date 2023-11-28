@@ -15,7 +15,7 @@ const Events: NextPage<PageProps> = ({ params, searchParams }) => {
         <div css={calWrapper}>
           <iframe
             title='calendar'
-            src='https://calendar.google.com/calendar/embed?src=c_9c4efbcce63552fa0923fca111bd8b3234e43f0ecc1726cd9270b25598d4a94a%40group.calendar.google.com&ctz=Asia%2FTokyo'
+            src='https://calendar.google.com/calendar/embed?src=0xethereum.japan%40gmail.com&ctz=Asia%2FTokyo'
             width='800'
             height='600'
           />
