@@ -50,18 +50,9 @@ const Wanted: NextPage<PageProps> = ({ params, searchParams }) => {
           <div css={css`margin-bottom: 2rem;`}>
             <h3>税務アドバイザー</h3>
             <ul>
-              <li>公認会計士、税理士等の有資格者（国内・国外問わず）</li>
-              <li>会計、税務に関する実務経験やアドバイザリー業務経験</li>
-              <li>損益計算や確定申告において暗号資産を取り扱った経験</li>
-            </ul>
-          </div>
-
-          <div css={css`margin-bottom: 4rem;`}>
-            <h3>運営メンバー</h3>
-            <ul>
-              <li>Ethereum に共感し拡めたい思いがある</li>
-              <li>運営メンバーの一人として何かしらの実行ができる方</li>
-              <li>強い好奇心</li>
+              <li>税理士資格を有する方</li>
+              <li>会計、税務に関する実務経験を持つ方</li>
+              <li>Ethereumに共感し拡めたい思いがある方</li>
             </ul>
           </div>
         </section>
