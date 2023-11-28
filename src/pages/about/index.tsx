@@ -44,9 +44,6 @@ const About: NextPage<PageProps> = ({ params, searchParams }) => {
           過去には、Ethereum
           Foundationのコアデベロッパーを招いてイベントも開催しています。
         </p>
-        <p>
-          運営メンバーに興味のある方はTwitterまでDMください！一緒にコミュニティを育てて行きましょう！
-        </p>
       </div>
     </Layout>
   );
