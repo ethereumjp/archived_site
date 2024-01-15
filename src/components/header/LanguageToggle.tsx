@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
-import { MdOutlineLanguage } from 'react-icons/md';
+import { css } from "@emotion/react";
+import { MdOutlineLanguage } from "react-icons/md";
 
 export const LanguageToggle = () => {
   const iconStyle = css`

@@ -1,4 +1,4 @@
-import type { AppProps } from 'next/app';
+import type { AppProps } from "next/app";
 
 const EthJpSite = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />;

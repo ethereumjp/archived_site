@@ -1,11 +1,11 @@
-// import ContactForm from '@/components/forms/ContactForm';
-import ContactFormDangerous from "@/components/forms/ContactForm_dangerous";
-import Layout from "@/components/layouts/base";
-import { mq } from "@/themes/settings/breakpoints";
-import { css } from "@emotion/react";
 import { NextPage } from "next";
 
-const Contact: NextPage = () => {
+import Layout from "@/components/layouts/base";
+import { mq } from "@/themes/settings/breakpoints";
+import type { PageProps } from "@/types";
+import { css } from "@emotion/react";
+
+const About: NextPage<PageProps> = ({ params, searchParams }) => {
   const titleStyle = css`
     font-size: 2rem;
     font-weight: 300;
@@ -19,24 +19,28 @@ const Contact: NextPage = () => {
     }
   `;
 
-  const formWrapperStyle = css`
+  const wrapperStyle = css`
     margin-left: auto;
     margin-right: auto;
-    padding-top: 4rem;
+    padding-top: 2rem;
+    text-align: center;
 
     ${mq.laptop} {
+      justify-content: center;
       width: 75%;
     }
   `;
 
   return (
-    <Layout pageTitle="Contact">
-      <h1 css={titleStyle}>CONTACT US</h1>
-      <div css={formWrapperStyle}>
-        <ContactFormDangerous />
+    <Layout pageTitle="about">
+      <h1 css={titleStyle}>ETHTokyo 2024</h1>
+      <div css={wrapperStyle}>
+        <h2>Hackathon: Aug. 23 - 25 / Conference: Aug. 26</h2>
+        <br />
+        <p>More details coming soon</p>
       </div>
     </Layout>
   );
 };
 
-export default Contact;
+export default About;

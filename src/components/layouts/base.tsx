@@ -1,61 +1,61 @@
-import Footer from '@/components/footer';
-import Header from '@/components/header';
-import { globalStyles } from '@/themes/global';
-import { mq } from '@/themes/settings/breakpoints';
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import { globalStyles } from "@/themes/global";
+import { mq } from "@/themes/settings/breakpoints";
 // import { mq } from '@/themes/settings/breakpoints';
 // import { themeDark, themeLight } from '@/themes/settings/color';
-import type { PageProps } from '@/types';
+import type { PageProps } from "@/types";
 
 // import createCache from '@emotion/cache';
-import { CacheProvider, Global, ThemeProvider, css } from '@emotion/react';
-import { Inter } from 'next/font/google';
-import Head from 'next/head';
-import { FC } from 'react';
+import { CacheProvider, Global, ThemeProvider, css } from "@emotion/react";
+import { Inter } from "next/font/google";
+import Head from "next/head";
+import { FC } from "react";
 
 export const metadata = {
   title: {
-    template: '%s | Ethereum Japan',
-    default: 'Ethereum Japan',
+    template: "%s | Ethereum Japan",
+    default: "Ethereum Japan",
   },
-  description: 'Everything Ethereum in Japan',
-  keywords: ['Ethereum', 'Japan', 'Blockchain'],
-  category: 'technology',
-  authors: [{ name: 'Ethereum Japan', url: 'https://github.com/ethereumjp' }],
+  description: "Everything Ethereum in Japan",
+  keywords: ["Ethereum", "Japan", "Blockchain"],
+  category: "technology",
+  authors: [{ name: "Ethereum Japan", url: "https://github.com/ethereumjp" }],
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'Ethereum Japan',
-    description: 'Everything Ethereum in Japan',
-    url: 'https://ethereumjapan.org',
-    siteName: 'ethereumjapan.org',
+    title: "Ethereum Japan",
+    description: "Everything Ethereum in Japan",
+    url: "https://ethereumjapan.org",
+    siteName: "ethereumjapan.org",
     images: [
       {
-        url: 'https://ethereumjapan.org/logo/ej.png',
+        url: "https://ethereumjapan.org/logo/ej.png",
         width: 800,
         height: 600,
       },
     ],
-    locale: 'ja_JP',
-    type: 'website',
+    locale: "ja_JP",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Ethereum Japan',
-    description: 'Everything Ethereum in Japan',
-    siteId: '1511737631948034048',
-    creator: '@Ethereum_JP',
-    creatorId: '1511737631948034048',
-    images: ['https://ethereumjapan.org/ej.png'],
+    card: "summary_large_image",
+    title: "Ethereum Japan",
+    description: "Everything Ethereum in Japan",
+    siteId: "1511737631948034048",
+    creator: "@Ethereum_JP",
+    creatorId: "1511737631948034048",
+    images: ["https://ethereumjapan.org/ej.png"],
   },
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#B8FAF6' },
-    { media: '(prefers-color-scheme: dark)', color: '#C9B3F5' },
+    { media: "(prefers-color-scheme: light)", color: "#B8FAF6" },
+    { media: "(prefers-color-scheme: dark)", color: "#C9B3F5" },
   ],
   icons: {
-    icon: '/logo/ej.png',
+    icon: "/logo/ej.png",
   },
   robots: {
     index: true,
@@ -65,22 +65,22 @@ export const metadata = {
       index: true,
       follow: true,
       noimageindex: true,
-      'max-image-preview': 'large',
-      'max-video-preview': -1,
-      'max-snippet': -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
     },
   },
 };
 
 const fontInter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
+  subsets: ["latin"],
+  display: "swap",
 });
 
 // const styleCache = createCache({ key: 'next' });
 
 const Layout: FC<PageProps> = ({ pageTitle, children }) => {
-  const siteTitle = 'Ethereum Japan';
+  const siteTitle = "Ethereum Japan";
 
   const baseLayoutStyle = css`
     padding-left: 1rem;

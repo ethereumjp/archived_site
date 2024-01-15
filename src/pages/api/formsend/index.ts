@@ -1,8 +1,8 @@
-import AirtableError from 'airtable/lib/airtable_error';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import AirtableError from "airtable/lib/airtable_error";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-import { table_websiteInquiry } from '@/utils/formObject';
-import rateLimit from '@/utils/rateLimit';
+import { table_websiteInquiry } from "@/utils/formObject";
+import rateLimit from "@/utils/rateLimit";
 
 type SubmittedRecord = {
   name: string;
@@ -36,10 +36,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData | string>,
 ) {
-  let ip = req.headers['x-real-ip'] as string;
-  const forwardedFor = req.headers['x-forwarded-for'] as string;
+  let ip = req.headers["x-real-ip"] as string;
+  const forwardedFor = req.headers["x-forwarded-for"] as string;
   if (!ip && forwardedFor) {
-    ip = forwardedFor?.split(',').at(0) ?? 'Unknown';
+    ip = forwardedFor?.split(",").at(0) ?? "Unknown";
   }
 
   try {
@@ -50,7 +50,7 @@ export default async function handler(
       .status(429)
       .end(
         `Rate Limited: ${
-          err instanceof Error ? err.message : 'server is currently busy'
+          err instanceof Error ? err.message : "server is currently busy"
         }. IP log: ${ip}`,
       );
   }
@@ -62,63 +62,65 @@ export default async function handler(
     //     return res.status(200).json({ message: 'GET', posted: entries as any });
     // }
 
-    case 'POST': {
+    case "POST": {
       const newInquiry: SubmittedRecord = req.body;
       if (!newInquiry) {
-        return res.status(400).end('Missing application form.');
+        return res.status(400).end("Missing application form.");
       }
       const { name, organization, email, wallet, inquiry } = newInquiry;
 
       if (!(name && organization && email && inquiry)) {
-        return res.status(400).end('Missing required fields.');
-      } else if (
-        !(typeof name === 'string' && 2 < name.length && name.length < 31)
-      ) {
-        return res.status(400).end('Invalid name. (min 3 char, max 30 char)');
-      } else if (
+        return res.status(400).end("Missing required fields.");
+      }
+      if (!(typeof name === "string" && 2 < name.length && name.length < 31)) {
+        return res.status(400).end("Invalid name. (min 3 char, max 30 char)");
+      }
+      if (
         !(
-          typeof organization === 'string' &&
+          typeof organization === "string" &&
           2 < organization.length &&
           organization.length < 31
         )
       ) {
         return res
           .status(400)
-          .end('Invalid organization. (min 3 char, max 30 char)');
-      } else if (!validateEmail(email)) {
-        return res.status(400).end('Invalid email address.');
-      } else if (!validateWalletAddress(wallet)) {
-        return res.status(400).end('Invalid wallet address.');
-      } else if (
+          .end("Invalid organization. (min 3 char, max 30 char)");
+      }
+      if (!validateEmail(email)) {
+        return res.status(400).end("Invalid email address.");
+      }
+      if (!validateWalletAddress(wallet)) {
+        return res.status(400).end("Invalid wallet address.");
+      }
+      if (
         !(
-          typeof inquiry === 'string' &&
+          typeof inquiry === "string" &&
           29 < inquiry.length &&
           inquiry.length < 2001
         )
       ) {
         return res
           .status(400)
-          .end('Invalid inquiry. (min 30 char, max 2000 char)');
-      } else {
-        console.log('New submission: ', newInquiry);
-        try {
-          const newRecords = await table_websiteInquiry.create({
-            ...newInquiry,
-            ip: ip,
-          });
-          return res.status(201).json({
-            message: 'POST',
-            posted: newRecords.fields as SubmittedRecord,
-          });
-        } catch (err) {
-          return res
-            .status(500)
-            .end(
-              `Failed${
-                err instanceof AirtableError ? `: ${err.message}` : ''
-              } 😕`,
-            );
-        }
+          .end("Invalid inquiry. (min 30 char, max 2000 char)");
+      }
+      console.log("New submission: ", newInquiry);
+      try {
+        const newRecords = await table_websiteInquiry.create({
+          ...newInquiry,
+          ip: ip,
+        });
+        return res.status(201).json({
+          message: "POST",
+          posted: newRecords.fields as SubmittedRecord,
+        });
+      } catch (err) {
+        return res
+          .status(500)
+          .end(
+            `Failed${
+              err instanceof AirtableError ? `: ${err.message}` : ""
+            } 😕`,
+          );
       }
     }
     default: {
@@ -131,5 +133,5 @@ export default async function handler(
 
 // necessary for netlify functions
 export const config = {
-  type: 'experimental-background',
+  type: "experimental-background",
 };

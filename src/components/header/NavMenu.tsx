@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { mq } from '@/themes/settings/breakpoints';
-import { css } from '@emotion/react';
+import { mq } from "@/themes/settings/breakpoints";
+import { css } from "@emotion/react";
 
-import { Spin as Hamburger } from 'hamburger-react';
+import { Spin as Hamburger } from "hamburger-react";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import type { FC } from 'react';
+import Link from "next/link";
+import { useState } from "react";
+import type { FC } from "react";
 
 export const NavMenu: FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -33,7 +33,7 @@ export const NavMenu: FC = () => {
 
   const mobileMenuStyle = css`
     display: flex;
-    transform: ${isMenuOpen ? 'translateX(-1.5rem)' : 'translateX(0%)'};
+    transform: ${isMenuOpen ? "translateX(-1.5rem)" : "translateX(0%)"};
     transition-duration: 150ms;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -49,7 +49,7 @@ export const NavMenu: FC = () => {
     border-radius: 0.25rem;
     border-style: solid;
     border-width: 1px;
-    display: ${isMenuOpen ? 'flex' : 'none'};
+    display: ${isMenuOpen ? "flex" : "none"};
     flex-direction: column;
     position: absolute;
     right: -1.5rem;
@@ -69,21 +69,22 @@ export const NavMenu: FC = () => {
     id: string;
     href: string;
     text: string;
+    bold?: boolean;
     newpage?: boolean;
-  }> = ({ id, href, text, newpage }) => {
+  }> = ({ id, href, text, bold, newpage }) => {
     return (
       <Link
         id={id}
         href={href}
         passHref={true}
-        target={newpage ? '_blank' : '_self'}
+        target={newpage ? "_blank" : "_self"}
         css={css`
           border-color: rgb(171 171 254);
           border-style: solid;
           border-width: 1px;
           color: black;
           font-size: 1.125rem;
-          font-weight: 300;
+          font-weight: ${bold ? "500" : "300"};
           letter-spacing: 0.05em;
           line-height: 1.75rem;
           padding: 0.5rem;
@@ -116,17 +117,22 @@ export const NavMenu: FC = () => {
     <div css={navMenuStyle}>
       <div css={laptopMenuStyle}>
         <div css={wrapperStyle}>
-          <MenuItem id='home' href='/' text='Home' />
-          <MenuItem id='events' href='/event' text='Events' />
-          <MenuItem id='about' href='/about' text='About' />
-          <MenuItem id='contact' href='/contact' text='Contact' />
+          <MenuItem id="home" href="/" text="Home" />
+          <MenuItem
+            id="ethtokyo2024"
+            href="/ethtokyo2024"
+            text="ETHTokyo '24"
+          />
+          <MenuItem id="events" href="/event" text="Events" />
+          <MenuItem id="contact" href="/contact" text="Contact" />
+          <MenuItem id="about" href="/about" text="About Us" />
         </div>
       </div>
 
       <div css={mobileMenuStyle}>
         <div
           css={css`
-            transform: ${isMenuOpen ? 'translateX(-6rem)' : 'translateX(0%)'};
+            transform: ${isMenuOpen ? "translateX(-6rem)" : "translateX(0%)"};
             transition-duration: 150ms;
             transition-property: transform;
             transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -136,10 +142,10 @@ export const NavMenu: FC = () => {
         </div>
 
         <div css={wrapperStyle}>
-          <MenuItem id='home' href='/' text='Home' />
-          <MenuItem id='events' href='/event' text='Events' />
-          <MenuItem id='about' href='/about' text='About' />
-          <MenuItem id='contact' href='/contact' text='Contact' />
+          <MenuItem id="home" href="/" text="Home" />
+          <MenuItem id="events" href="/event" text="Events" />
+          <MenuItem id="about" href="/about" text="About" />
+          <MenuItem id="contact" href="/contact" text="Contact" />
         </div>
       </div>
     </div>

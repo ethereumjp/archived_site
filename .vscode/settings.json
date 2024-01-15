@@ -3,6 +3,7 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "quickfix.biome": "explicit",
+    "source.fixAll.stylelint": "explicit",
     "source.organizeImports.biome": "explicit"
   },
   "css.validate": true,
@@ -17,7 +18,5 @@
     "typescript",
     "javascriptreact",
     "typescriptreact"
-  ],
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  ]
 }

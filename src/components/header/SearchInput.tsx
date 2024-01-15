@@ -1,6 +1,6 @@
-import { css } from '@emotion/react';
-import { FC } from 'react';
-import { MdSearch } from 'react-icons/md';
+import { css } from "@emotion/react";
+import { FC } from "react";
+import { MdSearch } from "react-icons/md";
 
 export const SearchInput: FC = () => {
   const iconStyle = css`

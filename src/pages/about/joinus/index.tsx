@@ -1,10 +1,10 @@
-import { NextPage } from 'next';
+import { NextPage } from "next";
 
-import Layout from '@/components/layouts/base';
-import { mq } from '@/themes/settings/breakpoints';
-import type { PageProps } from '@/types';
-import { css } from '@emotion/react';
-import Link from 'next/link';
+import Layout from "@/components/layouts/base";
+import { mq } from "@/themes/settings/breakpoints";
+import type { PageProps } from "@/types";
+import { css } from "@emotion/react";
+import Link from "next/link";
 
 const Wanted: NextPage<PageProps> = ({ params, searchParams }) => {
   const titleStyle = css`
@@ -31,7 +31,7 @@ const Wanted: NextPage<PageProps> = ({ params, searchParams }) => {
   `;
 
   return (
-    <Layout pageTitle='participate'>
+    <Layout pageTitle="participate">
       <h1 css={titleStyle}>JOIN US</h1>
       <div css={wrapperStyle}>
         <div css={css`margin-bottom: 4rem;`}>
@@ -41,12 +41,12 @@ const Wanted: NextPage<PageProps> = ({ params, searchParams }) => {
           </p>
           <p>
             Ethereum Japanは有志団体であり、基本的に有償での対価は発生しません。
-            <Link href='/about'>私たちの主旨</Link>
+            <Link href="/about">私たちの主旨</Link>
             に賛同いただける方を募集しています。
           </p>
         </div>
 
-        <section id='hiring'>
+        <section id="hiring">
           <div css={css`margin-bottom: 2rem;`}>
             <h3>税務アドバイザー</h3>
             <ul>
@@ -58,7 +58,7 @@ const Wanted: NextPage<PageProps> = ({ params, searchParams }) => {
         </section>
 
         <p>
-          <Link href='/contact'>問い合わせページ</Link>よりご連絡ください。
+          <Link href="/contact">問い合わせページ</Link>よりご連絡ください。
         </p>
       </div>
     </Layout>

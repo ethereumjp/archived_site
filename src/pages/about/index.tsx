@@ -1,9 +1,9 @@
-import { NextPage } from 'next';
+import { NextPage } from "next";
 
-import Layout from '@/components/layouts/base';
-import { mq } from '@/themes/settings/breakpoints';
-import type { PageProps } from '@/types';
-import { css } from '@emotion/react';
+import Layout from "@/components/layouts/base";
+import { mq } from "@/themes/settings/breakpoints";
+import type { PageProps } from "@/types";
+import { css } from "@emotion/react";
 
 const About: NextPage<PageProps> = ({ params, searchParams }) => {
   const titleStyle = css`
@@ -29,7 +29,7 @@ const About: NextPage<PageProps> = ({ params, searchParams }) => {
   }
 `;
   return (
-    <Layout pageTitle='about'>
+    <Layout pageTitle="about">
       <h1 css={titleStyle}>ABOUT US</h1>
       <div css={wrapperStyle}>
         <p>

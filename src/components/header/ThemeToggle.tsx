@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
-import { MdOutlineDarkMode } from 'react-icons/md';
+import { css } from "@emotion/react";
+import { MdOutlineDarkMode } from "react-icons/md";
 
 export const ThemeToggle = () => {
   const iconStyle = css`

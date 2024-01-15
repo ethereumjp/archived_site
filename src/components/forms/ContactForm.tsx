@@ -1,17 +1,17 @@
-import { css } from '@emotion/react';
-import SendIcon from '@mui/icons-material/Send';
+import { css } from "@emotion/react";
+import SendIcon from "@mui/icons-material/Send";
 import {
   Alert,
   Button,
   TextField,
   ThemeProvider,
   createTheme,
-} from '@mui/material';
-import { useRouter } from 'next/router';
-import { FC, useState } from 'react';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+} from "@mui/material";
+import { useRouter } from "next/router";
+import { FC, useState } from "react";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
-import { useLocale } from '@/hooks/useLocale';
+import { useLocale } from "@/hooks/useLocale";
 
 type FormInput = {
   name: string;
@@ -33,11 +33,11 @@ const ContactForm: FC = () => {
     formState: { errors },
   } = useForm<FormInput>({
     defaultValues: {
-      name: '',
-      organization: '',
-      email: '',
-      wallet: '',
-      inquiry: '',
+      name: "",
+      organization: "",
+      email: "",
+      wallet: "",
+      inquiry: "",
     },
   });
 
@@ -47,10 +47,10 @@ const ContactForm: FC = () => {
     if (!sendStatus) {
       setSendStatus(1);
       // send to endpoint
-      fetch('/api/formsend', {
-        method: 'POST',
+      fetch("/api/formsend", {
+        method: "POST",
         body: JSON.stringify(data),
-        headers: { 'Content-Type': 'application/json' },
+        headers: { "Content-Type": "application/json" },
       }).then((res) => {
         if (res.status === 201) {
           setSendStatus(2);
@@ -65,11 +65,12 @@ const ContactForm: FC = () => {
 
   const PopupAlerts = (props: { status: number }) => {
     if (props.status === 1) {
-      return <Alert severity='info'>Submitting, hold on...</Alert>;
-    } else if (props.status === 2) {
+      return <Alert severity="info">Submitting, hold on...</Alert>;
+    }
+    if (props.status === 2) {
       return (
         <Alert
-          severity='success'
+          severity="success"
           onClose={() => {
             setSendStatus(0);
             router.reload();
@@ -78,10 +79,11 @@ const ContactForm: FC = () => {
           Your inquiry was successfully submitted.
         </Alert>
       );
-    } else if (props.status === 3) {
+    }
+    if (props.status === 3) {
       return (
         <Alert
-          severity='error'
+          severity="error"
           onClose={() => {
             setSendStatus(0);
             router.reload();
@@ -90,9 +92,8 @@ const ContactForm: FC = () => {
           Invalid submission.
         </Alert>
       );
-    } else {
-      return <></>;
     }
+    return <></>;
   };
 
   return (
@@ -101,7 +102,7 @@ const ContactForm: FC = () => {
       <ThemeProvider
         theme={createTheme({
           palette: {
-            mode: 'light',
+            mode: "light",
           },
         })}
       >
@@ -113,39 +114,39 @@ const ContactForm: FC = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <Controller
-            name='name'
+            name="name"
             control={control}
             render={({ field }) => (
               <TextField
                 sx={{ mb: 1 }}
-                variant='filled'
+                variant="filled"
                 label={t.FORM.NAME}
                 disabled={!!sendStatus}
-                {...register('name', {
-                  required: 'your name is required',
+                {...register("name", {
+                  required: "your name is required",
                 })}
                 error={!!errors.name}
-                helperText={errors?.name ? errors.name.message : '\u00a0'}
+                helperText={errors?.name ? errors.name.message : "\u00a0"}
                 {...field}
               />
             )}
           />
 
           <Controller
-            name='organization'
+            name="organization"
             control={control}
             render={({ field }) => (
               <TextField
                 sx={{ mb: 1 }}
-                variant='filled'
+                variant="filled"
                 label={t.FORM.ORGANIZATION}
                 disabled={!!sendStatus}
-                {...register('organization', {
-                  required: 'Your organization is required',
+                {...register("organization", {
+                  required: "Your organization is required",
                 })}
                 error={!!errors.organization}
                 helperText={
-                  errors?.organization ? errors.organization.message : '\u00a0'
+                  errors?.organization ? errors.organization.message : "\u00a0"
                 }
                 {...field}
               />
@@ -153,64 +154,64 @@ const ContactForm: FC = () => {
           />
 
           <Controller
-            name='email'
+            name="email"
             control={control}
             render={({ field }) => (
               <TextField
                 sx={{ mb: 1 }}
-                variant='filled'
+                variant="filled"
                 label={t.FORM.EMAIL}
                 disabled={!!sendStatus}
-                {...register('email', {
-                  required: 'Your email address is required',
+                {...register("email", {
+                  required: "Your email address is required",
                 })}
                 error={!!errors.email}
-                helperText={errors?.email ? errors.email.message : '\u00a0'}
+                helperText={errors?.email ? errors.email.message : "\u00a0"}
                 {...field}
               />
             )}
           />
 
           <Controller
-            name='wallet'
+            name="wallet"
             control={control}
             render={({ field }) => (
               <TextField
                 sx={{ mb: 1 }}
-                variant='filled'
+                variant="filled"
                 label={t.FORM.WALLET}
                 disabled={!!sendStatus}
-                {...register('wallet', {
+                {...register("wallet", {
                   required:
-                    'Your Ethereum address is required (`0x...` or ENS)',
+                    "Your Ethereum address is required (`0x...` or ENS)",
                 })}
                 error={!!errors.wallet}
-                helperText={errors?.wallet ? errors.wallet.message : '\u00a0'}
+                helperText={errors?.wallet ? errors.wallet.message : "\u00a0"}
                 {...field}
               />
             )}
           />
 
           <Controller
-            name='inquiry'
+            name="inquiry"
             control={control}
             render={({ field }) => (
               <TextField
-                variant='filled'
+                variant="filled"
                 label={t.FORM.INQUIRY}
                 multiline={true}
                 minRows={3}
                 disabled={!!sendStatus}
-                {...register('inquiry', {
-                  required: 'Your inquiry is required',
+                {...register("inquiry", {
+                  required: "Your inquiry is required",
                   maxLength: {
                     value: 2000,
                     message:
-                      'Your inquiry must be 2000 characters or fewer in length.',
+                      "Your inquiry must be 2000 characters or fewer in length.",
                   },
                 })}
                 error={!!errors.inquiry}
-                helperText={errors?.inquiry ? errors.inquiry.message : '\u00a0'}
+                helperText={errors?.inquiry ? errors.inquiry.message : "\u00a0"}
                 {...field}
               />
             )}
@@ -225,16 +226,16 @@ const ContactForm: FC = () => {
           >
             <Button
               endIcon={<SendIcon />}
-              type='submit'
-              variant='outlined'
-              color='inherit'
+              type="submit"
+              variant="outlined"
+              color="inherit"
               disabled={!!sendStatus}
             >
               {sendStatus
                 ? sendStatus === 2
-                  ? 'Submitted'
-                  : 'Submitting'
-                : 'Send'}
+                  ? "Submitted"
+                  : "Submitting"
+                : "Send"}
             </Button>
           </div>
         </form>
