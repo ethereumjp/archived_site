@@ -31,4 +31,4 @@ jobs:
             ${{ github.workspace }}/.yarn/cache
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-nodemodules
       - name: tsc/lint/format check
-        run: yarn tsc && yarn run rome ci .
+        run: yarn tsc && yarn run biome ci .
