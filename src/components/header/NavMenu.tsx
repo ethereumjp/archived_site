@@ -113,26 +113,28 @@ export const NavMenu: FC = () => {
     );
   };
 
+  const MenuLinks = () => {
+    return (
+      <div css={wrapperStyle}>
+        <MenuItem id="home" href="/" text="Home" />
+        <MenuItem id="ethtokyo2024" href="/ethtokyo2024" text="ETHTokyo '24" />
+        <MenuItem id="events" href="/event" text="Events" />
+        <MenuItem id="contact" href="/contact" text="Contact" />
+        <MenuItem id="about" href="/about" text="About Us" />
+      </div>
+    );
+  };
+
   return (
     <div css={navMenuStyle}>
       <div css={laptopMenuStyle}>
-        <div css={wrapperStyle}>
-          <MenuItem id="home" href="/" text="Home" />
-          <MenuItem
-            id="ethtokyo2024"
-            href="/ethtokyo2024"
-            text="ETHTokyo '24"
-          />
-          <MenuItem id="events" href="/event" text="Events" />
-          <MenuItem id="contact" href="/contact" text="Contact" />
-          <MenuItem id="about" href="/about" text="About Us" />
-        </div>
+        <MenuLinks />
       </div>
 
       <div css={mobileMenuStyle}>
         <div
           css={css`
-            transform: ${isMenuOpen ? "translateX(-6rem)" : "translateX(0%)"};
+            transform: ${isMenuOpen ? "translateX(-7rem)" : "translateX(0%)"};
             transition-duration: 150ms;
             transition-property: transform;
             transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -140,18 +142,7 @@ export const NavMenu: FC = () => {
         >
           <Hamburger rounded={true} toggled={isMenuOpen} toggle={setMenuOpen} />
         </div>
-
-        <div css={wrapperStyle}>
-          <MenuItem id="home" href="/" text="Home" />
-          <MenuItem
-            id="ethtokyo2024"
-            href="/ethtokyo2024"
-            text="ETHTokyo '24"
-          />
-          <MenuItem id="events" href="/event" text="Events" />
-          <MenuItem id="contact" href="/contact" text="Contact" />
-          <MenuItem id="about" href="/about" text="About Us" />
-        </div>
+        <MenuLinks />
       </div>
     </div>
   );
