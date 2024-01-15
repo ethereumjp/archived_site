@@ -143,9 +143,14 @@ export const NavMenu: FC = () => {
 
         <div css={wrapperStyle}>
           <MenuItem id="home" href="/" text="Home" />
+          <MenuItem
+            id="ethtokyo2024"
+            href="/ethtokyo2024"
+            text="ETHTokyo '24"
+          />
           <MenuItem id="events" href="/event" text="Events" />
-          <MenuItem id="about" href="/about" text="About" />
           <MenuItem id="contact" href="/contact" text="Contact" />
+          <MenuItem id="about" href="/about" text="About Us" />
         </div>
       </div>
     </div>
