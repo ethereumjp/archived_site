@@ -41,6 +41,36 @@ export const NavMenu: FC = () => {
     }
   `;
 
+  const menuLinkStyle = css`
+    border-color: rgb(171 171 254);
+    border-style: solid;
+    border-width: 1px;
+    color: black;
+    font-size: 1.125rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    line-height: 1.75rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: none;
+
+    ${mq.tablet} {
+      font-size: 1.25rem;
+      line-height: 2rem;
+    }
+
+    ${mq.laptop}{
+      border-width: 0;
+      font-size: 1.25rem;
+      line-height: 2rem;
+
+      &:hover {
+        color: #88AAF1;
+      }
+    }
+  `;
+
   const wrapperStyle = css`
     background-color: rgb(224 231 255 / 80%);
     border-color: rgb(171 171 254);
@@ -76,35 +106,7 @@ export const NavMenu: FC = () => {
         href={href}
         passHref={true}
         target={newpage ? "_blank" : "_self"}
-        css={css`
-          border-color: rgb(171 171 254);
-          border-style: solid;
-          border-width: 1px;
-          color: black;
-          font-size: 1.125rem;
-          font-weight: ${bold ? "500" : "300"};
-          letter-spacing: 0.05em;
-          line-height: 1.75rem;
-          padding: 0.5rem;
-          padding-left: 1rem;
-          padding-right: 1rem;
-          text-decoration: none;
-
-          ${mq.tablet} {
-            font-size: 1.25rem;
-            line-height: 2rem;
-          }
-
-          ${mq.laptop}{
-            border-width: 0;
-            font-size: 1.25rem;
-            line-height: 2rem;
-
-            &:hover {
-              color: #88AAF1;
-            }
-          }
-        `}
+        css={menuLinkStyle}
       >
         {text}
       </Link>
@@ -115,7 +117,9 @@ export const NavMenu: FC = () => {
     return (
       <div css={wrapperStyle}>
         <MenuItem id="home" href="/" text="Home" />
-        <MenuItem id="ethtokyo2024" href="/ethtokyo2024" text="ETHTokyo '24" />
+        <a id="ethtokyo2024" href="/ethtokyo2024" css={menuLinkStyle}>
+          ETHTokyo
+        </a>
         <MenuItem id="events" href="/event" text="Events" />
         <MenuItem id="contact" href="/contact" text="Contact" />
         <MenuItem id="about" href="/about" text="About Us" />
