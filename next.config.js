@@ -7,6 +7,15 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/ethtokyo2024",
+        destination: "https://ethereumjp.github.io/ethtokyo-website",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
