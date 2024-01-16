@@ -1,5 +1,3 @@
-"use client";
-
 import { mq } from "@/themes/settings/breakpoints";
 import { css } from "@emotion/react";
 

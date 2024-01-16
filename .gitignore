@@ -58,6 +58,5 @@
 !.yarn/sdks
 !.yarn/versions
 
-# app directory (until migration)
+# app directory (not used in this project)
 app
-appp
