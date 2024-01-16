@@ -4,4 +4,4 @@
 
 - Typescript
 - Styled components ([Emotion](https://github.com/emotion-js/emotion))
-- [Rome](https://github.com/rome/tools) linter & formatter
+- [Biome](https://github.com/biomejs/biome) linter & formatter
