@@ -11,7 +11,7 @@ const nextConfig = {
     return [
       {
         source: "/ethtokyo2024",
-        destination: "https://ethereumjp.github.io/ethtokyo-website",
+        destination: "https://www.ethtokyo.com/",
         permanent: true,
       },
     ];

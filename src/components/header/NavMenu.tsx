@@ -119,7 +119,7 @@ export const NavMenu: FC = () => {
         <MenuItem id="home" href="/" text="Home" />
         <a
           id="ethtokyo2024"
-          href="https://ethereumjp.github.io/ethtokyo-website"
+          href="https://www.ethtokyo.com/"
           css={menuLinkStyle}
         >
           ETHTokyo
