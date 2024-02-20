@@ -1,12 +1,12 @@
 const path = require("path");
 
 const buildLintCommand = (filenames) =>
-  `yarn run biome lint ${filenames
+  `npx yarn run biome lint ${filenames
     .map((f) => path.relative(process.cwd(), f))
     .join(" ")}`;
 
 const buildFormatCommand = (filenames) =>
-  `yarn run biome format ${filenames
+  `npx yarn run biome format ${filenames
     .map((f) => path.relative(process.cwd(), f))
     .join(" ")} `;
 

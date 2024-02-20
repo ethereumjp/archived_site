@@ -35,5 +35,9 @@ export const globalStyles = css({
 
   a: { color: "#88AAF1" },
 
+  li: {
+    margin: "0.5rem 0",
+  },
+
   "*": {},
 });
