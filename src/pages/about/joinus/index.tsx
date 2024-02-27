@@ -5,6 +5,7 @@ import { mq } from "@/themes/settings/breakpoints";
 import type { PageProps } from "@/types";
 import { css } from "@emotion/react";
 import Link from "next/link";
+import { positions } from "@/utils/constants";
 
 const Wanted: NextPage<PageProps> = ({ params, searchParams }) => {
   const titleStyle = css`
@@ -54,33 +55,27 @@ const Wanted: NextPage<PageProps> = ({ params, searchParams }) => {
               padding-left: 0px;
 
               ${mq.laptop} {
-                display: flex;
-
+                column-gap: 4rem;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                row-gap: 2rem;
               }
             `}
           >
-            <li css={css`flex: 1; list-style-type: none;`}>
-              <h3>グラフィックデザイナー</h3>
-              <ul>
-                <li>
-                  コンセプトから実行まで、強力なビジュアルコミュニケーションスキルを持つ方
-                </li>
-                <li>
-                  UI/UX設計の基本原則を理解し、それらを効果的に適用できる方
-                </li>
-                <li>
-                  印刷物とデジタルを横断的に活用し、多様な媒体や材質に適したデザインの作成経験がある方
-                </li>
-              </ul>
-            </li>
-
-            <li css={css`flex: 1; list-style-type: none;`}>
-              <h3>税務アドバイザー</h3>
-              <ul>
-                <li>税理士資格を有する方</li>
-                <li>会計、税務に関する実務経験を持つ方</li>
-              </ul>
-            </li>
+            {positions.map((p) => {
+              if (p.open) {
+                return (
+                  <li css={css`list-style-type: none;`}>
+                    <h3>{p.role}</h3>
+                    <ul>
+                      {p.requirements.map((r) => (
+                        <li>{r}</li>
+                      ))}
+                    </ul>
+                  </li>
+                );
+              }
+            })}
           </ul>
         </section>
 
