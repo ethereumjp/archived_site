@@ -3,9 +3,9 @@ import { NextPage } from "next";
 import Layout from "@/components/layouts/base";
 import { mq } from "@/themes/settings/breakpoints";
 import type { PageProps } from "@/types";
+import { positions } from "@/utils/constants";
 import { css } from "@emotion/react";
 import Link from "next/link";
-import { positions } from "@/utils/constants";
 
 const Wanted: NextPage<PageProps> = ({ params, searchParams }) => {
   const titleStyle = css`
