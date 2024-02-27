@@ -72,12 +72,7 @@ export const BottomMenu = () => {
 
       <section id="ethereum_ecosystem">
         <h4>参加する</h4>
-        <NavLink
-          id="participate"
-          href="/about/joinus/"
-          text="メンバー募集"
-          _new
-        />
+        <NavLink id="participate" href="/about/joinus/" text="メンバー募集" />
 
         <NavLink
           id="participate"
@@ -97,12 +92,12 @@ export const BottomMenu = () => {
       </section>
 
       <section id="about_ethereum_jp">
-        <h4>Ethereum JPについて</h4>
-        <NavLink id="about" href="/about" text="Ethereum JPとは" />
+        <h4>Ethereum Japanについて</h4>
+        <NavLink id="about" href="/about" text="Ethereum Japanとは" />
         <NavLink
           id="discord"
           href="https://discord.gg/Tm5jU3DSCE"
-          text="Ethereum JP Discord"
+          text="EJ Discord"
         />
       </section>
     </div>
