@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 
 import Layout from "@/components/layouts/base";
 import { mq } from "@/themes/settings/breakpoints";
@@ -34,7 +34,7 @@ const About: NextPage<PageProps> = ({ params, searchParams }) => {
       <div css={wrapperStyle}>
         <p>
           Ethereum
-          JapanはEthereumを中心として広くblockhcain技術の推進と情報発信を行っていく非営利の団体です。
+          JapanはEthereumを中心として広くblockhchain技術の推進と情報発信を行っていく非営利の団体です。
         </p>
         <p>
           日本だけでなく、積極的に海外とのコミュニティとも連携して活動を行います。
