@@ -117,13 +117,13 @@ export const NavMenu: FC = () => {
     return (
       <div css={wrapperStyle}>
         <MenuItem id="home" href="/" text="Home" />
-        <a
+        {/* <a
           id="ethtokyo2024"
           href="https://www.ethtokyo.com/"
           css={menuLinkStyle}
         >
           ETHTokyo
-        </a>
+        </a> */}
         <MenuItem id="events" href="/event" text="Events" />
         <MenuItem id="contact" href="/contact" text="Contact" />
         <MenuItem id="about" href="/about" text="About Us" />
