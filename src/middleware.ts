@@ -12,7 +12,7 @@ const generateNonce = (): string => {
 
 const generateCspHeader = (nonce: string): string => {
   const csp = [
-    `default-src 'strict-dynamic' 'nonce-${nonce}' 'self' https://calendar.google.com`,
+    `default-src 'strict-dynamic' 'nonce-${nonce}' 'self' https://lu.ma`,
     `script-src ${
       process.env.NODE_ENV === "development"
         ? "'unsafe-eval' 'unsafe-inline'"
