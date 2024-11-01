@@ -12,8 +12,14 @@ const nextConfig = {
       {
         source: "/ethtokyo2024",
         destination: "https://www.ethtokyo.com/",
+        basePath: false,
         permanent: true,
       },
+      // {
+      //   source: "/*",
+      //   destination: "https://www.ethtokyo.com/",
+      //   permanent: true,
+      // },
     ];
   },
 };
