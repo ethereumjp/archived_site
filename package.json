@@ -5,11 +5,11 @@
   "main": "src/pages/_app.tsx",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ethereumjp/site.git"
+    "url": "git+https://github.com/ethereumjp/archived_site.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ethereumjp/site/issues"
+    "url": "https://github.com/ethereumjp/archived_site/issues"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

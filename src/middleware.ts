@@ -20,7 +20,7 @@ const generateCspHeader = (nonce: string): string => {
     } 'self'`,
     "style-src 'unsafe-inline' 'self'",
     "img-src 'self'",
-    "connect-src 'self' https://api.airtable.com/ ",
+    "connect-src 'self' https://api.airtable.com https://ethereumjp.org ",
     "object-src 'self'",
     "base-uri 'self'",
   ].join("; ");
