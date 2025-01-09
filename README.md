@@ -1,7 +1,1 @@
-# Ethereum Japan website
-
-## Features
-
-- Typescript
-- Styled components ([Emotion](https://github.com/emotion-js/emotion))
-- [Biome](https://github.com/biomejs/biome) linter & formatter
+This website is archived and its deployment is redirected to [ethereumjp.org](https://ethereumjp.org).
